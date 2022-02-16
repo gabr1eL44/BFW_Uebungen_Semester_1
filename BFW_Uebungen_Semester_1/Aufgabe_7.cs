@@ -20,6 +20,7 @@ namespace BFW_Uebungen_Semester_1
             string res1 = string.Format("{0}, {1} {2} {3} {4}?", words[4], words[0], words[5], words[2], words[1]);
             string res2 = string.Format("{0}, {1} {2} {3} {4}!", words[3], words[2], words[5], words[7], words[6]);
 
+            // Writing Strings on Console
             Console.WriteLine(res1);
             Console.WriteLine(res2);
         }
