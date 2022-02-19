@@ -8,7 +8,7 @@ namespace BFW_Uebungen_Semester_1
     {
         public static void Start()
         {
-
+            Console.WriteLine("Ubuntu Git Test");
         }
     }
 }
