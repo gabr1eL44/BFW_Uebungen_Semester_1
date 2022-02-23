@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BFW_Uebungen_Semester_1
 {
-    class Aufgabe12
+    class Aufgabe_12
     {
         public static void Start()
         {
