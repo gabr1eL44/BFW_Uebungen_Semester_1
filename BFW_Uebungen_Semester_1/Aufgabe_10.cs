@@ -13,6 +13,9 @@ namespace BFW_Uebungen_Semester_1
             string numberString = Console.ReadLine();
             int numberInt = Convert.ToInt32(numberString);
 
+            char a = 'a';
+            string b = String.Format("{0}", "a");
+
             Console.Clear();
 
             Console.WriteLine("Ihre eingegebene Zahl: " + numberInt);
