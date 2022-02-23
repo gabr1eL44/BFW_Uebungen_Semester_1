@@ -6,5 +6,9 @@ namespace BFW_Uebungen_Semester_1
 {
     class Aufgabe12
     {
+        public static void Start()
+        {
+
+        }
     }
 }
