@@ -18,7 +18,7 @@ namespace BFW_Uebungen_Semester_1
             Console.WriteLine("Ihre eingegebene Zahl: " + numberInt);
             Console.WriteLine("Das ist das Doppelte: " + numberInt * 2);
             Console.WriteLine("Das ist die Hälfte: " + numberInt / 2);
-            Console.WriteLine("Das ist de Rest bei der Teilung durch 7: " + numberInt % 7);
+            Console.WriteLine("Das ist der Rest bei der Teilung durch 7: " + numberInt % 7);
         }
     }
 }
