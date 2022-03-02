@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -8,17 +8,18 @@ namespace BFW_Uebungen_Semester_1
     {
         public static void Start()
         {
-            Console.Write("Bitte geben Sie eine Zahl ein: ");
+            Console.Write("Bitte geben Sie einen String ein:");
+            string input = Console.ReadLine();
 
-            string numberString = Console.ReadLine();
-            int numberInt = Convert.ToInt32(numberString);
+            Console.WriteLine(input);
+            input = input.Trim();
 
-            Console.Clear();
+            Console.WriteLine("Länge: " + input.Length);
+            Console.WriteLine("Erster Buchstabe: " + input[0].ToString().ToUpper());
+            Console.WriteLine("Letzter Buchstabe: " + input[input.Length - 1].ToString().ToUpper());    
 
-            Console.WriteLine("Ihre eingegebene Zahl: " + numberInt);
-            Console.WriteLine("Das ist das Doppelte: " + numberInt * 2);
-            Console.WriteLine("Das ist die Hälfte: " + numberInt / 2);
-            Console.WriteLine("Das ist der Rest bei der Teilung durch 7: " + numberInt % 7);
+            Console.WriteLine("Erster Buchstabe: " + input.Substring(0, 1).ToUpper());
+            Console.WriteLine("Letzter Buchstabe: " + input.Substring(input.Length - 1).ToUpper());
         }
     }
 }

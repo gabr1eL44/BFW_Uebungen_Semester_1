@@ -8,13 +8,17 @@ namespace BFW_Uebungen_Semester_1
     {
         public static void Start()
         {
-            Console.Write("Bitte geben Sie Ihre Zahl ein: ");
+            Console.Write("Bitte geben Sie eine Zahl ein: ");
 
-            string input = Console.ReadLine();
-            int number = Convert.ToInt32(input);
+            string numberString = Console.ReadLine();
+            int numberInt = Convert.ToInt32(numberString);
 
             Console.Clear();
-            Console.WriteLine("Ihre eigegebene Zahl: " + number);
+
+            Console.WriteLine("Ihre eingegebene Zahl: " + numberInt);
+            Console.WriteLine("Das ist das Doppelte: " + numberInt * 2);
+            Console.WriteLine("Das ist die Hälfte: " + numberInt / 2);
+            Console.WriteLine("Das ist der Rest bei der Teilung durch 7: " + numberInt % 7);
         }
     }
 }
