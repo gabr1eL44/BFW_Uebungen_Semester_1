@@ -23,7 +23,7 @@ namespace BFW_Uebungen_Semester_1
             
             for (int i = 0; i < 6; i++)
                 newNumbers[i] *= 2;
-                        
+
             for (int i = 0; i < 6; i++) 
                 Console.WriteLine("{0}tes Element: " + newNumbers[i], (i + 1));            
         }
