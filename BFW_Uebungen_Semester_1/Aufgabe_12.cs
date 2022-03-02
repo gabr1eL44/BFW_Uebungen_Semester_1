@@ -11,7 +11,7 @@ namespace BFW_Uebungen_Semester_1
             int[] numbers = new int[4] {70, 30, 89, 13};
 
             numbers[2] = 110;
-            numbers[3] += 17;
+            numbers[3] += 17; numbers[3] += 17;
 
             for (int i = 0; i<4; i++)
             {
@@ -32,7 +32,7 @@ namespace BFW_Uebungen_Semester_1
             
             for (int i = 0; i<6; i++)
             {
-                Console.WriteLine(i+1 + "tes Element: " + newNumbers[i]);
+                Console.WriteLine("{0}tes Element: " + newNumbers[i], (i + 1));
             }          
         }
     }
