@@ -6,7 +6,7 @@ namespace BFW_Uebungen_Semester_1
     {
         public static void Start()
         {
-            Console.Write("Bitte geben Sie die erste Farbe ein: ");
+            Console.Write("Bitte geben Sie die erste Farbe ein : ");
             string farbe1 = Console.ReadLine().Trim().ToLower();
 
             Console.Write("Bitte geben Sie die zweite Farbe ein: ");
@@ -21,8 +21,10 @@ namespace BFW_Uebungen_Semester_1
             else if (((farbe1 == "gelb") || (farbe2 == "gelb")) && ((farbe1 == "blau") || (farbe2 == "blau")))
                 Console.WriteLine("\nIhre Mischfarbe ist Grün!");
 
+            else if (farbe1 == farbe2)
+                Console.WriteLine("\nBitte geben Sie zwei verschiedene Farben ein!");
             else
-                Console.WriteLine("\nFehlerhafte Eingabe bzw. geben Sie zwei verschiedene Farben ein!");
+                Console.WriteLine("\nFehlerhafte Eingabe. Bitte nur Grundfarben (blau/gelb/rot) eingeben!");
         }
     }
 }
