@@ -13,10 +13,10 @@ namespace BFW_Uebungen_Semester_1
             string farbe2 = Console.ReadLine().Trim().ToLower();
 
             if (((farbe1 == "blau") || (farbe2 == "blau")) && ((farbe1 == "rot") || (farbe2 == "rot")))
-                Console.WriteLine("Ihre Mischfarbe ist Lila!");
+                Console.WriteLine("\nIhre Mischfarbe ist Lila!");
 
             else if (((farbe1 == "gelb") || (farbe2 == "gelb")) && ((farbe1 == "rot") || (farbe2 == "rot")))
-                Console.WriteLine("Ihre Mischfarbe ist Orange!");
+                Console.WriteLine("\nIhre Mischfarbe ist Orange!");
 
             else if (((farbe1 == "gelb") || (farbe2 == "gelb")) && ((farbe1 == "blau") || (farbe2 == "blau")))
                 Console.WriteLine("\nIhre Mischfarbe ist Grün!");
