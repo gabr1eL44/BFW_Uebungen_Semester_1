@@ -8,7 +8,7 @@ namespace BFW_Uebungen_Semester_1
     {
         public static void Start()
         {
-            int[] numbers = new int[4] {70, 30, 89, 13};
+            int[] numbers = new int[4] { 70, 30, 89, 13 };
 
             numbers[2] = 110; numbers[3] += 17;
             for (int i = 0; i < 4; i++) 
