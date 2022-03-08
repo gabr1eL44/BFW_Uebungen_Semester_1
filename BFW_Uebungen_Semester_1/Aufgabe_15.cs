@@ -7,10 +7,11 @@ namespace BFW_Uebungen_Semester_1
     {
         public static void Start()
         {
-            for (sbyte i = 0; i < 99999; i++)
+            sbyte i = 0;
+            while (true)
             {
-                Console.WriteLine(i);
-                Thread.Sleep(5);
+                Console.WriteLine(i++);
+                Thread.Sleep(10);
             }
         }
     }
