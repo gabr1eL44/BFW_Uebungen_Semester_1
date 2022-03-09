@@ -29,9 +29,9 @@ namespace BFW_Uebungen_Semester_1
             Console.Clear();
 
             if (inputInt % 2 == 0)
-                Console.WriteLine("Zahl " + inputInt + " geteilt durch 2 (ohne Rest): " + (inputInt / 2));
+                Console.WriteLine("Zahl " + inputInt + " (gerade) geteilt durch 2 (ohne Rest): " + (inputInt / 2));
             else
-                Console.WriteLine("Zahl " + inputInt + " geteilt durch 2 (mit Rest): " + (inputInt / 2) + " Rest " + (inputInt % 2));
+                Console.WriteLine("Zahl " + inputInt + " (ungerade) geteilt durch 2 (mit Rest): " + (inputInt / 2) + " Rest " + (inputInt % 2));
         }
     }
 }
