@@ -18,6 +18,7 @@ namespace BFW_Uebungen_Semester_1
                 else
                 {
                     Console.WriteLine("\nFehlerhafte Eingabe. Bitte eine Zahl eingeben!\n");
+                                        
                     if (eingabeString.Length % 2 == 0)
                         Console.WriteLine(eingabeString.Substring(0, (eingabeString.Length / 2)) + " | " + eingabeString.Substring((eingabeString.Length / 2)) + "\n");
                     else
