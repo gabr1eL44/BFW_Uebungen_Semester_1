@@ -6,32 +6,31 @@ namespace BFW_Uebungen_Semester_1
     {
         public static async void Start()
         {
-            string inputString; 
-            int inputInt;
+            int eingabeZahl;
 
             do
             {
                 Console.Write("Bitte geben Sie eine Zahl ein: ");
-                inputString = Console.ReadLine().Trim();
+                string eingabeString = Console.ReadLine().Trim();
 
-                if (int.TryParse(inputString, out inputInt))
+                if (int.TryParse(eingabeString, out eingabeZahl))
                     break;
                 else
                 {
                     Console.WriteLine("\nFehlerhafte Eingabe. Bitte eine Zahl eingeben!\n");
-                    if (inputString.Length % 2 == 0)
-                        Console.WriteLine(inputString.Substring(0, (inputString.Length / 2)) + " | " + inputString.Substring((inputString.Length / 2)) + "\n");
+                    if (eingabeString.Length % 2 == 0)
+                        Console.WriteLine(eingabeString.Substring(0, (eingabeString.Length / 2)) + " | " + eingabeString.Substring((eingabeString.Length / 2)) + "\n");
                     else
-                        Console.WriteLine(inputString.Substring(0, (inputString.Length / 2)) + " | " + inputString[inputString.Length / 2] + " | " + inputString.Substring((inputString.Length / 2) + 1) + "\n");
+                        Console.WriteLine(eingabeString.Substring(0, (eingabeString.Length / 2)) + " | " + eingabeString[eingabeString.Length / 2] + " | " + eingabeString.Substring((eingabeString.Length / 2) + 1) + "\n");
                 }
             } while (true);
             
             Console.Clear();
 
-            if (inputInt % 2 == 0)
-                Console.WriteLine("Zahl " + inputInt + " (gerade) geteilt durch 2 (ohne Rest): " + (inputInt / 2));
+            if (eingabeZahl % 2 == 0)
+                Console.WriteLine("Zahl " + eingabeZahl + " (gerade) geteilt durch 2 (ohne Rest): " + (eingabeZahl / 2));
             else
-                Console.WriteLine("Zahl " + inputInt + " (ungerade) geteilt durch 2 (mit Rest): " + (inputInt / 2) + " Rest " + (inputInt % 2));
+                Console.WriteLine("Zahl " + eingabeZahl + " (ungerade) geteilt durch 2 (mit Rest): " + (eingabeZahl / 2) + " Rest " + (eingabeZahl % 2));
         }
     }
 }
