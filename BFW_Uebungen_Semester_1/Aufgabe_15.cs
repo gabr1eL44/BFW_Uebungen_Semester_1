@@ -20,18 +20,26 @@ namespace BFW_Uebungen_Semester_1
                     Console.WriteLine("\nFehlerhafte Eingabe. Bitte eine Zahl eingeben!\n");
 
                     if (eingabeString.Length % 2 == 0)
+                    {
                         Console.WriteLine(eingabeString.Substring(0, (eingabeString.Length / 2)) + " | " + eingabeString.Substring((eingabeString.Length / 2)) + "\n");
+                    }
                     else
+                    {
                         Console.WriteLine(eingabeString.Substring(0, (eingabeString.Length / 2)) + " | " + eingabeString[eingabeString.Length / 2] + " | " + eingabeString.Substring((eingabeString.Length / 2) + 1) + "\n");
+                    }
                 }
             } while (true);
             
             Console.Clear();
 
             if (ausgabeZahl % 2 == 0)
+            {
                 Console.WriteLine("Zahl {0} (gerade) geteilt durch 2 (ohne Rest): {1}", ausgabeZahl, (ausgabeZahl / 2));
+            }
             else
+            {
                 Console.WriteLine("Zahl {0} (ungerade) geteilt durch 2 (mit Rest): {1} Rest 1", ausgabeZahl, (ausgabeZahl / 2));
+            }
         }
     }
 }
