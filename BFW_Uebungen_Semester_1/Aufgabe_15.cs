@@ -6,14 +6,14 @@ namespace BFW_Uebungen_Semester_1
     {
         public static async void Start()
         {
-            int eingabeZahl;
+            int ausgabeZahl;
 
             do
             {
                 Console.Write("Bitte geben Sie eine Zahl ein: ");
                 string eingabeString = Console.ReadLine().Trim();
 
-                if (int.TryParse(eingabeString, out eingabeZahl))
+                if (int.TryParse(eingabeString, out ausgabeZahl))
                     break;
                 else
                 {
@@ -28,10 +28,10 @@ namespace BFW_Uebungen_Semester_1
             
             Console.Clear();
 
-            if (eingabeZahl % 2 == 0)
-                Console.WriteLine("Zahl {0} (gerade) geteilt durch 2 (ohne Rest): {1}", eingabeZahl, (eingabeZahl / 2));
+            if (ausgabeZahl % 2 == 0)
+                Console.WriteLine("Zahl {0} (gerade) geteilt durch 2 (ohne Rest): {1}", ausgabeZahl, (ausgabeZahl / 2));
             else
-                Console.WriteLine("Zahl {0} (ungerade) geteilt durch 2 (mit Rest): {1} Rest {2}", eingabeZahl, (eingabeZahl / 2), (eingabeZahl % 2));
+                Console.WriteLine("Zahl {0} (ungerade) geteilt durch 2 (mit Rest): {1} Rest {2}", ausgabeZahl, (ausgabeZahl / 2), (ausgabeZahl % 2));
         }
     }
 }
