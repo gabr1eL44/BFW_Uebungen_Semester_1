@@ -4,7 +4,7 @@ namespace BFW_Uebungen_Semester_1
 {
     class Aufgabe_15
     {
-        public static void Start()
+        public static async void Start()
         {
             int eingabeZahl;
 
@@ -18,7 +18,7 @@ namespace BFW_Uebungen_Semester_1
                 else
                 {
                     Console.WriteLine("\nFehlerhafte Eingabe. Bitte eine Zahl eingeben!\n");
-                                        
+
                     if (eingabeString.Length % 2 == 0)
                         Console.WriteLine(eingabeString.Substring(0, (eingabeString.Length / 2)) + " | " + eingabeString.Substring((eingabeString.Length / 2)) + "\n");
                     else
@@ -29,9 +29,9 @@ namespace BFW_Uebungen_Semester_1
             Console.Clear();
 
             if (eingabeZahl % 2 == 0)
-                Console.WriteLine("Zahl " + eingabeZahl + " (gerade) geteilt durch 2 (ohne Rest): " + (eingabeZahl / 2));
+                Console.WriteLine("Zahl {0} (gerade) geteilt durch 2 (ohne Rest): {1}", eingabeZahl, (eingabeZahl / 2));
             else
-                Console.WriteLine("Zahl " + eingabeZahl + " (ungerade) geteilt durch 2 (mit Rest): " + (eingabeZahl / 2) + " Rest " + (eingabeZahl % 2));
+                Console.WriteLine("Zahl {0} (ungerade) geteilt durch 2 (mit Rest): {1} Rest {2}", eingabeZahl, (eingabeZahl / 2), (eingabeZahl % 2));
         }
     }
 }
