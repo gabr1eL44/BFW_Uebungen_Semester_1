@@ -12,7 +12,6 @@ namespace BFW_Uebungen_Semester_1
                 Console.WriteLine(i);
                 Thread.Sleep(5);
             }
-
         }
     }
 }
