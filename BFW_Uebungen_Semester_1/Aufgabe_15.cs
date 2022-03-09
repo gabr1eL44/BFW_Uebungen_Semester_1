@@ -4,7 +4,7 @@ namespace BFW_Uebungen_Semester_1
 {
     class Aufgabe_15
     {
-        public static async void Start()
+        public static void Start()
         {
             int ausgabeZahl;
 
