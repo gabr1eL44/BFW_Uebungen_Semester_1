@@ -36,8 +36,7 @@ namespace BFW_Uebungen_Semester_1
                     Console.WriteLine("\nBitte geben Sie zwei verschiedene Farben ein!\n");
                 else
                     Console.WriteLine("\nFehlerhafte Eingabe. Bitte nur Grundfarben (blau/gelb/rot) eingeben!\n");
-            } while (true);
-            
+            } while (true);            
         }
     }
 }
