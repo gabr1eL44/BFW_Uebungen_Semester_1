@@ -19,7 +19,7 @@ namespace BFW_Uebungen_Semester_1
             }
 
             int sum = numbers[0];
-            int biggest = numbers[0]; int smallest = numbers[0];
+            int biggest = numbers[0], smallest = numbers[0];
 
             for (int i = 1; i < numbers.Length; i++)
             {
