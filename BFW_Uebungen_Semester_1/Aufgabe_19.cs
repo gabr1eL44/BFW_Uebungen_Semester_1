@@ -32,6 +32,8 @@ namespace BFW_Uebungen_Semester_1
             }
 
             int average = sum / numbers.Length;
+            // Alternative, um eventuelle Rundungsfehler zu vermeiden
+            // int average = Convert.ToInt32((double)sum / numbers.Length);
 
             Console.WriteLine("\nDie Summe der Zahlen: " + sum);
             Console.WriteLine("Die größte Zahl: " + biggest);
