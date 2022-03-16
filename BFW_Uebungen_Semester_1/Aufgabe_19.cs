@@ -6,10 +6,8 @@ namespace BFW_Uebungen_Semester_1
     {
         public static void Start()
         {
-            const int count = 5;
-
-            int[] numbers = new int[count];
-            for (int i = 0; i < count; i++)
+            int[] numbers = new int[5];
+            for (int i = 0; i < numbers.Length; i++)
             {
                 Console.WriteLine("Bitte geben Sie die {0}. Zahl ein:", i+1);
                 string eingabe = Console.ReadLine();
@@ -23,7 +21,7 @@ namespace BFW_Uebungen_Semester_1
             int sum = numbers[0];
             int biggest = numbers[0]; int smallest = numbers[0];
 
-            for (int i = 1; i < count; i++)
+            for (int i = 1; i < numbers.Length; i++)
             {
                 sum += numbers[i];
 
@@ -33,7 +31,7 @@ namespace BFW_Uebungen_Semester_1
                     smallest = numbers[i];
             }
 
-            int average = sum / count;
+            int average = sum / numbers.Length;
 
             Console.WriteLine("\nDie Summe der Zahlen: " + sum);
             Console.WriteLine("Die größte Zahl: " + biggest);
