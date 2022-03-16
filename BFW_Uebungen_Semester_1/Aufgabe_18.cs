@@ -13,15 +13,15 @@ namespace BFW_Uebungen_Semester_1
             {
                 case "hallo":
                     Console.WriteLine("Hi!");
-                    Console.WriteLine("Die Begrüßung '" + eingabe + "' kenne ich :D");
+                    Console.WriteLine("Die Begrüßung '{0}' kenne ich :D", eingabe);
                     break;
                 case "hi":
                     Console.WriteLine("Servus!");
-                    Console.WriteLine("Die Begrüßung '" + eingabe + "' kenne ich :D");
+                    Console.WriteLine("Die Begrüßung '{0}' kenne ich :D", eingabe);
                     break;
                 case "servus":
                     Console.WriteLine("Hallo!");
-                    Console.WriteLine("Die Begrüßung '" + eingabe + "' kenne ich :D");
+                    Console.WriteLine("Die Begrüßung '{0}' kenne ich :D", eingabe);
                     break;
                 default:
                     Console.WriteLine("Hi!");
