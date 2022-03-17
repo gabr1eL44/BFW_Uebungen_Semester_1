@@ -59,7 +59,7 @@ namespace BFW_Uebungen_Semester_1
                 {
                     Console.Write(zahlen[j] + " ");
                 }
-                 Console.WriteLine("\n");
+                Console.WriteLine("\n");
 
                 for (int j = currentIndex + 1; j < zahlen.Length; j++)
                 {
@@ -78,7 +78,7 @@ namespace BFW_Uebungen_Semester_1
 
             } while (square <= n);
 
-            Console.WriteLine("!!Abbruchbedingung erreicht!!\n");
+            Console.WriteLine("Abbruchbedingung erreicht!\n");
             Console.WriteLine("================================");
             Console.Write("Die gesuchten Primzahlen lauten: ");
             for (int i = 0; i < zahlen.Length; i++)
@@ -120,6 +120,7 @@ namespace BFW_Uebungen_Semester_1
                     Console.Write(teiler);
                 }
             }
+
             if (anzahl == 0)
                 Console.WriteLine("Primzahl");
             else
