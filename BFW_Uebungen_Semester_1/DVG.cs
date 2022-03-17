@@ -92,7 +92,7 @@ namespace BFW_Uebungen_Semester_1
             Console.ReadKey();
             Console.Clear();
 
-            //Aufgabe 5
+            // Aufgabe 5
             int zahl, teiler = 2, anzahl = 0;
 
             do
