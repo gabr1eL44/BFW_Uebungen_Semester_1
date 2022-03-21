@@ -38,7 +38,6 @@ namespace BFW_Uebungen_Semester_1
                         Environment.Exit(0);
                         break;
                 }
-
                 Console.WriteLine();
             } while (true);
         }

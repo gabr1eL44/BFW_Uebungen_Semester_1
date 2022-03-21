@@ -22,7 +22,6 @@ namespace BFW_Uebungen_Semester_1
 
                     numbers = tempArr;
                 }
-
                 do
                 {
                     Console.WriteLine("Soll noch eine Zahl eingegen werden (y/n)");
