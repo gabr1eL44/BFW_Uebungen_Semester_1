@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BFW_Uebungen_Semester_1
 {
@@ -8,7 +6,14 @@ namespace BFW_Uebungen_Semester_1
     {
         public static void Start()
         {
- 
+            int[] numbers = new int[] { 34, 5, 83, 28, 44, 99, 30, 72, 28 };
+
+            foreach (int element in numbers)
+            {
+                Console.WriteLine("Die Zahl: " + element);
+                Console.WriteLine("Die Hälfte: " + element / 2);
+                Console.WriteLine("Das Doppelte: " + element * 2 + "\n");
+            }
         }
     }
 }
