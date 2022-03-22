@@ -12,14 +12,10 @@ namespace BFW_Uebungen_Semester_1
             do
             {
                 eingabe = Console.ReadLine().Trim();
+
                 if (eingabe.Length == 0)
                     break;
-                else if (eingabe.Length < 6)
-                    if (ausgabe != "")
-                        ausgabe += " und " + eingabe;
-                    else
-                        ausgabe += eingabe;
-                else
+                else if (eingabe.Length > 5)
                 {
                     int currentPos = 0; string tempString = ""; bool lastCharAllowed = false;
                     for (int i = 0; i < eingabe.Length; i++)
@@ -43,34 +39,39 @@ namespace BFW_Uebungen_Semester_1
                     if (lastCharAllowed)
                         tempString += eingabe.Substring(currentPos);
 
-                    if (tempString.Length > 5)
+                    eingabe = tempString;
+
+                    if (eingabe.Length > 5)
                     {                
-                        currentPos = 0; string newTempString = ""; lastCharAllowed = false;
-                        for (int i = 0; i < tempString.Length; i++)
+                        currentPos = 0; tempString = ""; lastCharAllowed = false;
+                        for (int i = 0; i < eingabe.Length; i++)
                         {
-                            switch (tempString.ToLower()[i])
+                            switch (eingabe.ToLower()[i])
                             {
                                 case 's':
                                 case 't':
                                 case 'd':
-                                    newTempString += tempString.Substring(currentPos, i - currentPos);
+                                    tempString += eingabe.Substring(currentPos, i - currentPos);
                                     currentPos = i + 1;
                                     break;
                                 default:
-                                    if (i + 1 == tempString.Length)
+                                    if (i + 1 == eingabe.Length)
                                         lastCharAllowed = true;
                                     break;
                             }
                         }
                         if (lastCharAllowed)
-                            newTempString += tempString.Substring(currentPos);
-                        tempString = newTempString;
+                            tempString += eingabe.Substring(currentPos);
+
+                        eingabe = tempString;
                     }
-                    if (ausgabe != "")
-                        ausgabe += " und " + tempString;
-                    else
-                        ausgabe += tempString;
                 }
+
+                if (ausgabe != "")
+                    ausgabe += " und " + eingabe;
+                else
+                    ausgabe += eingabe;
+
             } while (true);
 
             Console.WriteLine("Ihr String ist: " + ausgabe);
