@@ -15,6 +15,7 @@ namespace BFW_Uebungen_Semester_1
 
                 if (eingabe.Length == 0)
                     break;
+
                 else if (eingabe.Length > 5)
                 {
                     int currentPos = 0; string tempString = ""; bool lastCharAllowed = false;
