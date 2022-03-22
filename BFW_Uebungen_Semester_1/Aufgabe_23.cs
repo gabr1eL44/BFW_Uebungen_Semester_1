@@ -29,7 +29,7 @@ namespace BFW_Uebungen_Semester_1
                             case 'i':
                             case 'o':
                             case 'u':
-                                tempString += eingabe.Substring(currentBasePos, i - currentBasePos);
+                                tempString += eingabe[currentBasePos..i];
                                 currentBasePos = i + 1;
                                 break;
                             default:
@@ -39,7 +39,7 @@ namespace BFW_Uebungen_Semester_1
                         }
                     }
                     if (lastCharAllowed)
-                        tempString += eingabe.Substring(currentBasePos);
+                        tempString += eingabe[currentBasePos..];
 
                     eingabe = tempString;
 
@@ -53,7 +53,7 @@ namespace BFW_Uebungen_Semester_1
                                 case 's':
                                 case 't':
                                 case 'd':
-                                    tempString += eingabe.Substring(currentBasePos, i - currentBasePos);
+                                    tempString += eingabe[currentBasePos..i];
                                     currentBasePos = i + 1;
                                     break;
                                 default:
@@ -63,7 +63,7 @@ namespace BFW_Uebungen_Semester_1
                             }
                         }
                         if (lastCharAllowed)
-                            tempString += eingabe.Substring(currentBasePos);
+                            tempString += eingabe[currentBasePos..];
 
                         eingabe = tempString;
                     }

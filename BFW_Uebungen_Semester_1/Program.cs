@@ -4,7 +4,7 @@ namespace BFW_Uebungen_Semester_1
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             // Start Current Task
             Aufgabe_23.Start();
