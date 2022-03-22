@@ -2,8 +2,7 @@
 
 namespace BFW_Uebungen_Semester_1
 {
-    // Dieselbe Aufgabe ist in Aufgabe_23_alt.cs einfacher gelöst (hier mit Substrings, dort mit einfachen Chars)
-    class Aufgabe_23
+    class Aufgabe_23_alt
     {
         public static void Start()
         {
@@ -19,7 +18,7 @@ namespace BFW_Uebungen_Semester_1
 
                 else if (eingabe.Length > 5)
                 {
-                    int currentBasePos = 0; string tempString = ""; bool lastCharAllowed = false;
+                    string tempString = "";
                     for (int i = 0; i < eingabe.Length; i++)
                     {
                         switch (eingabe.ToLower()[i])
@@ -29,23 +28,18 @@ namespace BFW_Uebungen_Semester_1
                             case 'i':
                             case 'o':
                             case 'u':
-                                tempString += eingabe.Substring(currentBasePos, i - currentBasePos);
-                                currentBasePos = i + 1;
                                 break;
                             default:
-                                if (i + 1 == eingabe.Length)
-                                    lastCharAllowed = true;
+                                tempString += eingabe[i].ToString();
                                 break;
                         }
                     }
-                    if (lastCharAllowed)
-                        tempString += eingabe.Substring(currentBasePos);
 
                     eingabe = tempString;
 
                     if (eingabe.Length > 5)
-                    {                
-                        currentBasePos = 0; tempString = ""; lastCharAllowed = false;
+                    {
+                        tempString = "";
                         for (int i = 0; i < eingabe.Length; i++)
                         {
                             switch (eingabe.ToLower()[i])
@@ -53,20 +47,15 @@ namespace BFW_Uebungen_Semester_1
                                 case 's':
                                 case 't':
                                 case 'd':
-                                    tempString += eingabe.Substring(currentBasePos, i - currentBasePos);
-                                    currentBasePos = i + 1;
                                     break;
                                 default:
-                                    if (i + 1 == eingabe.Length)
-                                        lastCharAllowed = true;
+                                    tempString += eingabe[i].ToString();
                                     break;
                             }
                         }
-                        if (lastCharAllowed)
-                            tempString += eingabe.Substring(currentBasePos);
-
-                        eingabe = tempString;
                     }
+
+                    eingabe = tempString;
                 }
 
                 if (ausgabe != "")
