@@ -24,6 +24,7 @@ namespace BFW_Uebungen_Semester_1
 
                 sum += numbers[numbers.Length - 1];
             } while (sum <= 100);
+
             Console.WriteLine("\nDie Summe der Eingaben: " + sum);
             Console.WriteLine("Die Anzahl der Eingaben, bis die 100 überschritten wurde: " + numbers.Length);
         }
