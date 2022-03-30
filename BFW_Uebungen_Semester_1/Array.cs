@@ -45,6 +45,25 @@ namespace BFW_Uebungen_Semester_1
             }
         }
 
+        public static bool Pop(ref int[] _numbers)
+        {
+            try
+            {
+                int[] tempArr = new int[_numbers.Length - 1];
+
+                for (int i = 0; i < _numbers.Length - 1; i++)
+                    tempArr[i] = _numbers[i];
+
+                _numbers = tempArr;
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public static bool Insert(ref int[] _numbers, int _newNumber, int _position)
         {
             try
@@ -72,7 +91,7 @@ namespace BFW_Uebungen_Semester_1
             }
         }
 
-         public static bool Remove(ref int[] _numbers, out int _oldNumber, int _position)
+        public static bool Remove(ref int[] _numbers, out int _oldNumber, int _position)
         {
             try
             {
@@ -94,6 +113,30 @@ namespace BFW_Uebungen_Semester_1
             catch
             {
                 _oldNumber = 0;
+                return false;
+            }
+        }
+
+        public static bool Remove(ref int[] _numbers, int _position)
+        {
+            try
+            {
+                int[] tempArr = new int[_numbers.Length - 1];
+
+                int offset = 0;
+
+                for (int i = 0; i < _numbers.Length; i++)
+                    if (i != _position)
+                        tempArr[i + offset] = _numbers[i];
+                    else
+                        offset = -1;
+
+                _numbers = tempArr;
+
+                return true;
+            }
+            catch
+            {
                 return false;
             }
         }
