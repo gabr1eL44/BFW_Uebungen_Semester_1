@@ -28,6 +28,44 @@ namespace BFW_Uebungen_Semester_1
             return tempArr;
         }
 
+
+        public static void Insert(ref int[] _numbers, int _newNumber, int _position)
+        {
+            int[] tempArr = new int[_numbers.Length + 1];
+
+            int offset = 0;
+
+            for (int i = 0; i < _numbers.Length; i++)
+                if (i != _position)
+                    tempArr[i + offset] = _numbers[i];
+                else
+                {
+                    tempArr[i] = _newNumber;
+                    offset = 1;
+                }
+
+            _numbers = tempArr;
+        }
+
+        public static int[] Insert(int[] _numbers, int _newNumber, int _position)
+        {
+            int[] tempArr = new int[_numbers.Length + 1];
+
+            int offset = 0;
+
+            for (int i = 0; i < _numbers.Length; i++)
+                if (i != _position)
+                    tempArr[i + offset] = _numbers[i];
+                else
+                {
+                    tempArr[i] = _newNumber;
+                    offset = 1;
+                }
+                
+            return tempArr;
+        }
+
+
         public static void Remove(ref int[] _numbers, int _position)
         {
             int[] tempArr = new int[_numbers.Length - 1];
