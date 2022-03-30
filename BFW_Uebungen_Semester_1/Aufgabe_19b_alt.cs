@@ -24,7 +24,7 @@ namespace BFW_Uebungen_Semester_1
                     case 'h':
                         Console.Write("\nBitte geben Sie eine neue Zahl ein: ");
                         if (int.TryParse(Console.ReadLine(), out int zahl))
-                            Array.Add(ref numbers, zahl);
+                            Array.Push(ref numbers, zahl);
                         else
                             Console.WriteLine("Fehlerhafte Eingabe!");
                         break;

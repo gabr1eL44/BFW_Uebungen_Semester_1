@@ -4,110 +4,114 @@ namespace BFW_Uebungen_Semester_1
 {
     class Array
     {
-        public static void Add(ref int[] _numbers, int _newNumber)
+        public static bool Push(ref int[] _numbers, int _newNumber)
         {
-            int[] tempArr = new int[_numbers.Length + 1];
+            try
+            {
+                int[] tempArr = new int[_numbers.Length + 1];
 
-            for (int i = 0; i < _numbers.Length; i++)
-                tempArr[i] = _numbers[i];
+                for (int i = 0; i < _numbers.Length; i++)
+                    tempArr[i] = _numbers[i];
 
-            tempArr[_numbers.Length] = _newNumber;
+                tempArr[_numbers.Length] = _newNumber;
+                _numbers = tempArr;
 
-            _numbers = tempArr;
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public static int[] Add(int[] _numbers, int _newNumber)
+        public static bool Pop(ref int[] _numbers, out int _oldNumber)
         {
-            int[] tempArr = new int[_numbers.Length + 1];
+            try
+            {
+                int[] tempArr = new int[_numbers.Length - 1];
 
-            for (int i = 0; i < _numbers.Length; i++)
-                tempArr[i] = _numbers[i];
+                for (int i = 0; i < _numbers.Length - 1; i++)
+                    tempArr[i] = _numbers[i];
 
-            tempArr[_numbers.Length] = _newNumber;
+                _oldNumber = _numbers[_numbers.Length - 1];
+                _numbers = tempArr;
 
-            return tempArr;
+                return true;
+            }
+            catch
+            {
+                _oldNumber = 0;
+                return false;
+            }
         }
 
-
-        public static void Insert(ref int[] _numbers, int _newNumber, int _position)
+        public static bool Insert(ref int[] _numbers, int _newNumber, int _position)
         {
-            int[] tempArr = new int[_numbers.Length + 1];
+            try
+            {
+                int[] tempArr = new int[_numbers.Length + 1];
 
-            int offset = 0;
+                int offset = 0;
 
-            for (int i = 0; i < _numbers.Length; i++)
-                if (i != _position)
-                    tempArr[i + offset] = _numbers[i];
-                else
-                {
-                    tempArr[i] = _newNumber;
-                    offset = 1;
-                }
+                for (int i = 0; i < _numbers.Length + 1; i++)
+                    if (i != _position)
+                        tempArr[i] = _numbers[i - offset];
+                    else
+                    {
+                        tempArr[i] = _newNumber;
+                        offset = 1;
+                    }
 
-            _numbers = tempArr;
+                _numbers = tempArr;
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-        public static int[] Insert(int[] _numbers, int _newNumber, int _position)
+         public static bool Remove(ref int[] _numbers, int _position)
         {
-            int[] tempArr = new int[_numbers.Length + 1];
+            try
+            {
+                int[] tempArr = new int[_numbers.Length - 1];
 
-            int offset = 0;
+                int offset = 0;
 
-            for (int i = 0; i < _numbers.Length; i++)
-                if (i != _position)
-                    tempArr[i + offset] = _numbers[i];
-                else
-                {
-                    tempArr[i] = _newNumber;
-                    offset = 1;
-                }
-                
-            return tempArr;
+                for (int i = 0; i < _numbers.Length; i++)
+                    if (i != _position)
+                        tempArr[i + offset] = _numbers[i];
+                    else
+                        offset = -1;
+
+                _numbers = tempArr;
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
-
-        public static void Remove(ref int[] _numbers, int _position)
-        {
-            int[] tempArr = new int[_numbers.Length - 1];
-
-            int offset = 0;
-
-            for (int i = 0; i < _numbers.Length; i++)
-                if (i != _position)
-                    tempArr[i + offset] = _numbers[i];
-                else
-                    offset = -1;
-
-            _numbers = tempArr;
-        }
-
-        public static int[] Remove(int[] _numbers, int _position)
-        {
-            int[] tempArr = new int[_numbers.Length - 1];
-
-            int offset = 0;
-
-            for (int i = 0; i < _numbers.Length; i++)
-                if (i != _position)
-                    tempArr[i + offset] = _numbers[i];
-                else
-                    offset = -1;
-
-            return tempArr;
-        }
-
-        public static void Clear(ref int[] _numbers)
+        public static bool Init(out int[] _numbers)
         {
             int[] tempArr = new int[0];
 
             _numbers = tempArr;
+
+            return true;
         }
 
-        public static int[] Clear(int[] _numbers)
+         public static bool Clear(ref int[] _numbers)
         {
             int[] tempArr = new int[0];
 
-            return tempArr;
+             _numbers = tempArr;
+
+            return true;
         }
     }
 }
