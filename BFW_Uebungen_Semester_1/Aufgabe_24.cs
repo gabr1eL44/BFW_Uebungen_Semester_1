@@ -8,16 +8,18 @@ namespace BFW_Uebungen_Semester_1
     {
         public static void Start()
         {
-            int number;
+            int[] numbers = new int[0];
 
-            Console.Write("Bitte Eingabe: ");
-            string eingabe = Console.ReadLine();
+            numbers = Array.Add(numbers, 5);
+            numbers = Array.Add(numbers, 4);
+            numbers = Array.Add(numbers, 8);
+            numbers = Array.Add(numbers, 14);
+            numbers = Array.Add(numbers, 25);
 
-            if (!int.TryParse(eingabe, out number))
-                number = -1;
+            numbers = Array.Remove(numbers, 3);
 
-            Console.WriteLine("Ihre Zahl: " + number);
-
+            for (int i = 0; i < numbers.Length; i ++)
+                Console.WriteLine("{0}. Eintrag : {1}", (i + 1), numbers[i]);
         }
     }
 }
