@@ -72,7 +72,7 @@ namespace BFW_Uebungen_Semester_1
             }
         }
 
-         public static bool Remove(ref int[] _numbers, int _position)
+         public static bool Remove(ref int[] _numbers, out int _oldNumber, int _position)
         {
             try
             {
@@ -86,12 +86,14 @@ namespace BFW_Uebungen_Semester_1
                     else
                         offset = -1;
 
+                _oldNumber = _numbers[_position];
                 _numbers = tempArr;
 
                 return true;
             }
             catch
             {
+                _oldNumber = 0;
                 return false;
             }
         }

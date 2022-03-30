@@ -13,7 +13,7 @@ namespace BFW_Uebungen_Semester_1
             Array.Push(ref numbers, 3);
 
             Array.Insert(ref numbers, 4, 2);
-            Array.Remove(ref numbers, 2);
+            Array.Remove(ref numbers, out int old, 2);
 
             int laenge = numbers.Length;
             for (int i = 0; i < laenge; i++)
