@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BFW_Uebungen_Semester_1
 {
@@ -10,12 +8,20 @@ namespace BFW_Uebungen_Semester_1
         {
             int[] numbers = new int[0];
 
-            numbers = Array.Add(numbers, 5);
-            numbers = Array.Add(numbers, 4);
-            numbers = Array.Add(numbers, 8);
-            numbers = Array.Add(numbers, 14);
-            numbers = Array.Add(numbers, 25);
+            Array.Add(ref numbers, 67);
+            Array.Clear(ref numbers);
 
+            numbers = Array.Add(numbers, 67);
+            numbers = Array.Clear(numbers);
+
+            Array.Add(ref numbers, 5);
+            Array.Add(ref numbers, 4);
+            numbers = Array.Add(numbers, 8);
+            numbers = Array.Add(numbers, 25);
+            Array.Add(ref numbers, 47);
+            Array.Add(ref numbers, 98);
+
+            Array.Remove(ref numbers, 3);
             numbers = Array.Remove(numbers, 3);
 
             for (int i = 0; i < numbers.Length; i ++)
