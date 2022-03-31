@@ -29,7 +29,7 @@ namespace BFW_Uebungen_Semester_1
                             Console.WriteLine("Fehlerhafte Eingabe!");
                         break;
                     case 'l':
-                        Array.Clear(ref numbers);
+                        Array.Reset(ref numbers);
                         Console.WriteLine();
                         break;
                     case 'b':

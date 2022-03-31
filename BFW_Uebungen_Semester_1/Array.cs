@@ -150,7 +150,7 @@ namespace BFW_Uebungen_Semester_1
             return true;
         }
 
-         public static bool Clear(ref int[] _numbers)
+         public static bool Reset(ref int[] _numbers)
         {
             int[] tempArr = new int[0];
 

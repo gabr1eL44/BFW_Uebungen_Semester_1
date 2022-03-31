@@ -22,9 +22,9 @@ namespace BFW_Uebungen_Semester_1
                 Console.WriteLine(last);
             }
 
-            Console.WriteLine("\n\nLänge des Arrays : " + numbers.Length);
+            Console.WriteLine("\nLänge des Arrays : " + numbers.Length);
 
-            Array.Clear(ref numbers);
+            Array.Reset(ref numbers);
         }
     }
 }
