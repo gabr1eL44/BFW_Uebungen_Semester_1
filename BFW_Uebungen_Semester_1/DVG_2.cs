@@ -23,7 +23,6 @@ namespace BFW_Uebungen_Semester_1
                 m = -s;
 
             return m;
-            
         }
 
         public static void Start()
@@ -32,7 +31,7 @@ namespace BFW_Uebungen_Semester_1
 
             double ergebnis;
 
-            for (; true;)
+            while (true)
             {
                 ergebnis = calc(a, b);
                 Console.WriteLine("Ihr Ergebnis lautet: " + ergebnis);
