@@ -11,7 +11,7 @@ namespace BFW_Uebungen_Semester_1
             double m = (double)rnd.Next(100) / 100;
             double s = (a + b) / 2;
 
-            Console.WriteLine("Zufallszahl lautet:" + m);
+            Console.WriteLine("Zufallszahl lautet : " + m);
 
             if (m < s)
                 s = a - b;
@@ -34,7 +34,7 @@ namespace BFW_Uebungen_Semester_1
             while (true)
             {
                 ergebnis = calc(a, b);
-                Console.WriteLine("Ihr Ergebnis lautet: " + ergebnis);
+                Console.WriteLine("Ihr Ergebnis lautet: " + ergebnis + "\n");
                 Thread.Sleep(200);
             }
         }
