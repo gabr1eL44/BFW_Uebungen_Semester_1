@@ -5,7 +5,7 @@ namespace BFW_Uebungen_Semester_1
 {
     class DVG_2
     {
-        public static double calc (double a, double b)
+        public static double calc(double a, double b)
         {
             Random rnd = new Random();
             double m = (double)rnd.Next(100) / 100;
@@ -14,8 +14,15 @@ namespace BFW_Uebungen_Semester_1
             Console.WriteLine("Zufallszahl lautet : " + m);
 
             if (m < s)
+            {
+                Console.WriteLine("Zufallszahl kleiner!");
                 s = a - b;
-            else s = b - a;
+            }
+            else
+            {
+                Console.WriteLine("Zufallszahl größer!");
+                s = b - a;
+            }
 
             if (s > 0)
                 m = s;
