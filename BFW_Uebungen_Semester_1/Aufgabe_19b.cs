@@ -30,8 +30,7 @@ namespace BFW_Uebungen_Semester_1
                         numbers = tempArr;
                         break;
                     case 'l':
-                        int[] emptyArr = new int[0];
-                        numbers = emptyArr;
+                        numbers = new int[0];
                         Console.WriteLine();
                         break;
                     case 'b':
