@@ -7,40 +7,53 @@ namespace BFW_Uebungen_Semester_1
     {
         public static void Start()
         {
-            List<int> listOfPrimes = new List<int>();
-
-            listOfPrimes.Add(2);
-            listOfPrimes.Add(3);
-            listOfPrimes.Add(5);
-            listOfPrimes.Add(7);
-            listOfPrimes.Add(11);
-            listOfPrimes.Add(13);
-            listOfPrimes.Add(17);
-            listOfPrimes.Add(19);
-            listOfPrimes.Add(23);
-
             Console.WriteLine("Wie viele Mirpzahlen möchsten Sie erzeugen?");
             int anzahl = Convert.ToInt32(Console.ReadLine());
 
-            int count = 0;
-            foreach (int possibleMirp in listofPrimes)
+            Console.WriteLine();
+
+            int hits = 0; int counter = 1;
+            while (hits < anzahl)
             {
-                string str = Convert.ToString(possibleMirp);
-                for (int i = (str.Length - 1); i >= 0; i--)
-                    string newStr += str[i];
+                counter++;
 
-                int reversedInt = Convert.ToInt32(newStr);
-
-                foreach (var prime in listOfPrimes)
-                    if (prime == reversedInt)
+                bool isPrime = true;
+                for (int i=2; i < counter; i++)
+                {
+                    if (counter % i == 0)
                     {
-                        Console.Write(prime + " ");
-                        count++;
+                        isPrime = false;
                         break;
                     }
+                    if (isPrime == false)
+                        break;
+                }
+                if (!isPrime)
+                    continue;
 
-                if (count == anzahl)
-                    break;
+                string str = Convert.ToString(counter); string newStr = "";
+                for (int i = (str.Length - 1); i >=0; i--)
+                    newStr += str[i];
+
+                int reversedcounter = Convert.ToInt32(newStr);
+
+                bool isReversedPrime = true;
+                for (int i=2; i < reversedcounter; i++)
+                {
+                    if (reversedcounter % i == 0)
+                    {
+                        isReversedPrime = false;
+                        break;
+                    }
+                    if (isReversedPrime == false)
+                        break;
+                }
+
+                if (isPrime && isReversedPrime)
+                {
+                    hits++;
+                    Console.WriteLine("{0}: {1} ist eine Mripzahl!", hits, counter);
+                }
             }
         }
     }
