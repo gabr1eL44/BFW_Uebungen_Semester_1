@@ -52,7 +52,7 @@ namespace BFW_Uebungen_Semester_1
                 if (isPrime && isReversedPrime)
                 {
                     hits++;
-                    Console.WriteLine("{0}: {1} ist eine Mripzahl!", hits, counter);
+                    Console.WriteLine("{0}: {1} ist eine Mirpzahl!", hits, counter);
                 }
             }
         }
