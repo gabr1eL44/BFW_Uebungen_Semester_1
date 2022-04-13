@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 
 namespace BFW_Uebungen_Semester_1
 {
@@ -21,9 +20,7 @@ namespace BFW_Uebungen_Semester_1
                 Console.WriteLine("Aktuelle Fallhöhe des Flummis beträgt: " + Math.Round(height, 2));
                 height /= 2;
                 jumps++;
-                //Thread.Sleep(500);
                 Console.WriteLine("Booooooing!\n");
-                //Thread.Sleep(300);
             }
 
             Console.WriteLine("Aktuelle Fallhöhe des Flummis beträgt: " + Math.Round(height, 2));
