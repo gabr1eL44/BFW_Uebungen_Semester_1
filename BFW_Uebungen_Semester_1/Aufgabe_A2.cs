@@ -7,25 +7,28 @@ namespace BFW_Uebungen_Semester_1
     {
         public static void Start()
         {
-            Console.Write("Bitte geben Sie eine Anfangshöhe ein: ");
-            double height = Convert.ToDouble(Console.ReadLine());
+            double height;
+            do
+            {
+                Console.Write("Bitte geben Sie eine Anfangshöhe ein (m): ");
+            } while (!double.TryParse(Console.ReadLine().Trim(), out height));
 
-            Console.WriteLine();
+            Console.Clear();
 
             int jumps = 0;
-            while (height >= 1)
+            while (height >= 0.01)
             {
                 Console.WriteLine("Aktuelle Fallhöhe des Flummis beträgt: " + Math.Round(height, 2));
                 height /= 2;
                 jumps++;
-                Thread.Sleep(500);
+                //Thread.Sleep(500);
                 Console.WriteLine("Booooooing!\n");
-                Thread.Sleep(300);
+                //Thread.Sleep(300);
             }
 
             Console.WriteLine("Aktuelle Fallhöhe des Flummis beträgt: " + Math.Round(height, 2));
 
-            Console.WriteLine("\nDer Flummi hat nach {0} Sprüngen seine finale Fallhöhe (<1) erreicht!", jumps);
+            Console.WriteLine("\nDer Flummi hat nach {0} Sprüngen seine finale Fallhöhe (<0.01 m) erreicht!", jumps);
         }
     }
 }
