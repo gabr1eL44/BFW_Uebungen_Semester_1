@@ -23,7 +23,7 @@ namespace BFW_Uebungen_Semester_1
                 Console.WriteLine("Booooooing!\n");
             }
 
-            Console.WriteLine("Aktuelle Fallhöhe des Flummis beträgt: " + Math.Round(height, 2));
+            Console.WriteLine("Aktuelle Fallhöhe des Flummis beträgt: " + Math.Round(height, 3));
 
             Console.WriteLine("\nDer Flummi hat nach {0} Sprüngen seine finale Fallhöhe (<0.01 m) erreicht!", jumps);
         }
