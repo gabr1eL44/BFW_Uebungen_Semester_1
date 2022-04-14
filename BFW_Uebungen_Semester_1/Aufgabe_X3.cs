@@ -31,7 +31,7 @@ namespace BFW_Uebungen_Semester_1
                     continue;
 
                 string str = Convert.ToString(counter); string newStr = "";
-                for (int i = (str.Length - 1); i >=0; i--)
+                for (int i = (str.Length - 1); i >= 0; i--)
                     newStr += str[i];
 
                 int reversedcounter = Convert.ToInt32(newStr);
