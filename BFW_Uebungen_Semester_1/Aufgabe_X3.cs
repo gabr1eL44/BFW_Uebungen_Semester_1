@@ -34,12 +34,12 @@ namespace BFW_Uebungen_Semester_1
                 for (int i = (str.Length - 1); i >= 0; i--)
                     newStr += str[i];
 
-                int reversedcounter = Convert.ToInt32(newStr);
+                int reversedCounter = Convert.ToInt32(newStr);
 
                 bool isReversedPrime = true;
-                for (int i=2; i < reversedcounter; i++)
+                for (int i=2; i < reversedCounter; i++)
                 {
-                    if (reversedcounter % i == 0)
+                    if (reversedCounter % i == 0)
                     {
                         isReversedPrime = false;
                         break;
