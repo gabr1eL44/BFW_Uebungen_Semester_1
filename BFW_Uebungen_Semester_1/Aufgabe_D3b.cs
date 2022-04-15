@@ -21,7 +21,7 @@ namespace BFW_Uebungen_Semester_1
                     int skip = 0;
                     for (int i = 0; i < numbers.Length; i++)
                     {
-                        if ((skip == 1) ||(numbers[i - skip] < Convert.ToInt32(eingabe)))
+                        if ((skip == 1) || (numbers[i - skip] < Convert.ToInt32(eingabe)))
                             tempArr[i] = numbers[i - skip];
                         else
                         {
