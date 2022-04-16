@@ -66,7 +66,7 @@ namespace BFW_Uebungen_Semester_1
                     {
                         guthaben -= preisSnack;
                         faecher[fachNummer]--;
-                        Console.WriteLine("Bitte entnehmen Sie Ihren Snack.");
+                        Console.WriteLine("Bitte entnehmen Sie Ihren Snack.\n");
                     }
                     else
                         Console.WriteLine("Das Fach ist leer. Bitte wählen Sie ein anderes.\n");
