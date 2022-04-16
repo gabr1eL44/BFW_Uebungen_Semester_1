@@ -2,7 +2,7 @@
 
 namespace BFW_Uebungen_Semester_1
 {
-    class Arr
+    class FunWithArrays
     {
         public static void Start()
         {
@@ -15,14 +15,14 @@ namespace BFW_Uebungen_Semester_1
             Array.Insert(ref numbers, 4, 2);
             Array.Remove(ref numbers, 2);
 
-            int laenge = numbers.Length;
+            int laenge = Array.Length(ref numbers);
             for (int i = 0; i < laenge; i++)
             {
                 Array.Pop(ref numbers, out int last);
                 Console.WriteLine(last);
             }
 
-            Console.WriteLine("\nLänge des Arrays : " + numbers.Length);
+            Console.WriteLine("\nLänge des Arrays : " + Array.Length(ref numbers));
 
             Array.Reset(ref numbers);
         }

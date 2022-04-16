@@ -158,5 +158,10 @@ namespace BFW_Uebungen_Semester_1
 
             return true;
         }
+
+        public static int Length(ref int[] _numbers)
+        {
+            return _numbers.Length;
+        }
     }
 }
