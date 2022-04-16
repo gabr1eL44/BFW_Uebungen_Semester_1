@@ -22,7 +22,8 @@ namespace BFW_Uebungen_Semester_1
                     numbers = tempArr;
                 }
 
-                sum += numbers[numbers.Length - 1];
+                sum += numbers[^
+                    1];
             } while (sum <= 100);
 
             Console.WriteLine("\nDie Summe der Eingaben: " + sum);

@@ -21,11 +21,11 @@ namespace BFW_Uebungen_Semester_1
 
                     if (eingabeString.Length % 2 == 0)
                     {
-                        Console.WriteLine(eingabeString.Substring(0, (eingabeString.Length / 2)) + " | " + eingabeString.Substring((eingabeString.Length / 2)) + "\n");
+                        Console.WriteLine(eingabeString.Substring(0, (eingabeString.Length / 2)) + " | " + eingabeString[(eingabeString.Length / 2)..] + "\n");
                     }
                     else
                     {
-                        Console.WriteLine(eingabeString.Substring(0, (eingabeString.Length / 2)) + " | " + eingabeString[eingabeString.Length / 2] + " | " + eingabeString.Substring((eingabeString.Length / 2) + 1) + "\n");
+                        Console.WriteLine(eingabeString.Substring(0, (eingabeString.Length / 2)) + " | " + eingabeString[eingabeString.Length / 2] + " | " + eingabeString[((eingabeString.Length / 2) + 1)..] + "\n");
                     }
                 }
             } while (true);

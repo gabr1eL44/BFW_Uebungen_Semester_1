@@ -12,7 +12,7 @@ namespace BFW_Uebungen_Semester_1
             string eingabe1 = Console.ReadLine();
 
             if (int.TryParse(eingabe1, out int ergebnis1))
-                ergebnis1 = ergebnis1 % 10;
+                ergebnis1 %= 10;
             else
                 ergebnis1 = (eingabe1.Length * 2) % 10;
 
@@ -22,7 +22,7 @@ namespace BFW_Uebungen_Semester_1
             string eingabe2 = Console.ReadLine();
 
             if (int.TryParse(eingabe2, out int ergebnis2))
-                ergebnis2 = ergebnis2 * 3;
+                ergebnis2 *= ergebnis2;
             else
                 ergebnis2 = (eingabe2.Length * 5) % 100;
 

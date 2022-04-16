@@ -33,7 +33,7 @@ namespace BFW_Uebungen_Semester_1
                 for (int i = 0; i < _numbers.Length - 1; i++)
                     tempArr[i] = _numbers[i];
 
-                _oldNumber = _numbers[_numbers.Length - 1];
+                _oldNumber = _numbers[^1];
                 _numbers = tempArr;
 
                 return true;

@@ -5,7 +5,7 @@ namespace BFW_Uebungen_Semester_1
 {
     class DVG_2
     {
-        public static double calc(double a, double b)
+        public static double Calc(double a, double b)
         {
             Random rnd = new Random();
             double m = (double)rnd.Next(100) / 100;
@@ -40,7 +40,7 @@ namespace BFW_Uebungen_Semester_1
 
             while (true)
             {
-                ergebnis = calc(a, b);
+                ergebnis = Calc(a, b);
                 Console.WriteLine("Ihr Ergebnis lautet: " + ergebnis + "\n");
                 Thread.Sleep(200);
             }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BFW_Uebungen_Semester_1
 {
@@ -18,11 +16,11 @@ namespace BFW_Uebungen_Semester_1
 
             // Cut first and last character and make them uppercase
             Console.WriteLine("Erster Buchstabe: " + str.Substring(0,1).ToUpper());
-            Console.WriteLine("Letzter Buchstabe: " + str.Substring(str.Length - 1).ToUpper());
+            Console.WriteLine("Letzter Buchstabe: " + str[^1..].ToUpper());
 
             // Cut first and last character and make them uppercase
             Console.WriteLine("Erster Buchstabe: " + str[0].ToString().ToUpper());
-            Console.WriteLine("Letzter Buchstabe: " + str[str.Length - 1].ToString().ToUpper());
+            Console.WriteLine("Letzter Buchstabe: " + str[^1].ToString().ToUpper());
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace BFW_Uebungen_Semester_1
 {
-    internal class Uebung
+    internal class Uebungen
     {
         public static void Start()
         {
