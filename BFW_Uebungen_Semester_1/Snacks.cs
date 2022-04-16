@@ -59,6 +59,8 @@ namespace BFW_Uebungen_Semester_1
 
                 } while (!isValidInput || currency == '€');
 
+                Console.Clear();
+
                 Console.WriteLine("\nSie haben Fach {0} gewählt!", fachNummer);
                 if (guthaben >= preisSnack)
                 {
@@ -73,6 +75,7 @@ namespace BFW_Uebungen_Semester_1
                 }
                 else
                     Console.WriteLine("Ihr Guthaben ({0} €) ist nicht ausreichend. Ein Snack kostet {1} €. Bitte werfen Sie mehr Geld ein!\n", guthaben.ToString("0.00"), preisSnack.ToString("0.00"));
+
             };
         }
     }
