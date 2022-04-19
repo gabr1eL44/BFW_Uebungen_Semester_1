@@ -24,8 +24,6 @@ namespace BFW_Uebungen_Semester_1
                         isPrime = false;
                         break;
                     }
-                    if (isPrime == false)
-                        break;
                 }
                 if (!isPrime)
                     continue;
