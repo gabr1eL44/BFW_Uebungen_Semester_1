@@ -21,7 +21,7 @@ namespace BFW_Uebungen_Semester_1
 
             while (true)
             {
-                bool isValidInput = false; decimal value; char currency; int fachNummer = 0;
+                bool isValidInput = false; char currency; int fachNummer = 0;
                 do
                 {
                     for (int i = 0; i < faecher.Length; i++)
@@ -38,7 +38,7 @@ namespace BFW_Uebungen_Semester_1
                     currency = input[^1];
                     if (currency == '€')
                     {
-                        isValidInput = decimal.TryParse(input[..^1], out value);
+                        isValidInput = decimal.TryParse(input[..^1], out decimal value);
                         guthaben += value;
                     }
                     else if (input.ToUpper() == "A")
