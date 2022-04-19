@@ -17,7 +17,7 @@ namespace BFW_Uebungen_Semester_1
                 counter++;
 
                 bool isPrime = true;
-                for (int i=2; i < counter; i++)
+                for (int i = 2; i < counter; i++)
                 {
                     if (counter % i == 0)
                     {
