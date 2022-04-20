@@ -13,6 +13,7 @@ namespace BFW_Uebungen_Semester_1
             Console.WriteLine(str);
             int.TryParse(Console.ReadLine(), out eingabe);
         }
+
         public static void Start()
         {
             ThreadStart childref = new ThreadStart(CallToChildThread);
