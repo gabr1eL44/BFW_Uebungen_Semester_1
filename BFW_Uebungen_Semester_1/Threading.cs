@@ -28,7 +28,6 @@ namespace BFW_Uebungen_Semester_1
                 Console.SetCursorPosition(str.Length, 0);
                 if (eingabe != 0)
                     break;
-                Console.WriteLine(childThread.ThreadState );
                 Thread.Sleep(1000);
             }
 
