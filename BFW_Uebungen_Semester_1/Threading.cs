@@ -17,6 +17,7 @@ namespace BFW_Uebungen_Semester_1
         {
             ThreadStart childref = new ThreadStart(CallToChildThread);
             Thread childThread = new Thread(childref);
+
             childThread.Start();
             Thread.Sleep(100);
 
@@ -27,6 +28,7 @@ namespace BFW_Uebungen_Semester_1
                 Console.SetCursorPosition(str.Length, 0);
                 if (eingabe != 0)
                     break;
+                Console.WriteLine(childThread.ThreadState );
                 Thread.Sleep(1000);
             }
 
