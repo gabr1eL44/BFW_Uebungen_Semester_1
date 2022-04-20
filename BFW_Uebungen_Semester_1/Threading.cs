@@ -6,11 +6,11 @@ namespace BFW_Uebungen_Semester_1
     class Threading
     {
         public static int eingabe;
-        public static string ausgabe = "Bitte geben Sie innerhalb von 5 Sekunden eine Zahl ein: ";
+        public static string str = "Bitte geben Sie innerhalb von 5 Sekunden eine Zahl ein: ";
 
         public static void CallToChildThread()
         {
-            Console.WriteLine(ausgabe);
+            Console.WriteLine(str);
             int.TryParse(Console.ReadLine(), out eingabe);
         }
         public static void Start()
@@ -24,7 +24,7 @@ namespace BFW_Uebungen_Semester_1
             {
                 Console.SetCursorPosition(0, 2);
                 Console.WriteLine("Ihnen bleiben noch {0} Sekunden Zeit!", (5 - i));
-                Console.SetCursorPosition(ausgabe.Length, 0);
+                Console.SetCursorPosition(str.Length, 0);
                 if (eingabe != 0)
                     break;
                 Thread.Sleep(1000);
