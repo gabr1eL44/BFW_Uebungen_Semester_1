@@ -2,7 +2,7 @@
 
 namespace BFW_Uebungen_Semester_1
 {
-    public static class Global
+    internal static class Global
     {
         public static int number = 13;
     }
@@ -12,6 +12,6 @@ namespace BFW_Uebungen_Semester_1
         public static void Start()
         {
             Console.WriteLine(Global.number);
-        }
+          }
     }
 }
