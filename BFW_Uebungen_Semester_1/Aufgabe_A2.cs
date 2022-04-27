@@ -10,7 +10,7 @@ namespace BFW_Uebungen_Semester_1
             do
             {
                 Console.Write("Bitte geben Sie eine Anfangshöhe ein (m): ");
-            } while (!double.TryParse(Console.ReadLine().Trim(), out height));
+            } while (!double.TryParse(Console.ReadLine(), out height));
 
             Console.Clear();
 
