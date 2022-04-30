@@ -8,7 +8,6 @@ namespace BFW_Uebungen_Semester_1
         // Quicksort Algorithm (StackOverflow ab ~10M, 1M unter 5 Sekunden)
         private static void Quicksort(ref int[] _numbers, int startPosition, int lengthSubArray)
         {
-
             int[] newNumbers = new int[lengthSubArray];
             int pivot = _numbers[startPosition];
 
