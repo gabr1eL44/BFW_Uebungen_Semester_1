@@ -5,7 +5,7 @@ namespace BFW_Uebungen_Semester_1
 {
     class Aufgabe_D3c
     {
-        // Quicksort Algorithm
+        // Quicksort Algorithm (StackOverflow ab 850k, 100k unter 1 Sekunde, 850k unter 1 Minute)
         private static void Quicksort(ref int[] _numbers, int startPosition, int lengthSubArray)
         {
 
