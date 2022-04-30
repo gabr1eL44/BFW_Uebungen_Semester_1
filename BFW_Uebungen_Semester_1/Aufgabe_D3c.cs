@@ -5,6 +5,7 @@ namespace BFW_Uebungen_Semester_1
 {
     class Aufgabe_D3c
     {
+        // Quicksort Algorithm
         private static void Quicksort(ref int[] _numbers, int startPosition, int lengthSubArray)
         {
 
@@ -30,17 +31,15 @@ namespace BFW_Uebungen_Semester_1
 
         public static void Start()
         {
-            const int N = 200000;
-            int[] numbers = new int[N];
-            int[] numbersOLD = new int[N];
+            Console.WriteLine("Geben Sie die Anzahl der zu sortierenden Zahlen ein (empfohlen 100k-800k): ");
+            int N = Convert.ToInt32(Console.ReadLine());
 
+            int[] numbers = new int[N];
+  
             Random rnd = new Random();
 
             for (int i = 0; i < numbers.Length; i++)
-            {
                 numbers[i] = rnd.Next(101);
-                numbersOLD[i] = numbers[i];
-            }
 
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
@@ -51,37 +50,7 @@ namespace BFW_Uebungen_Semester_1
             TimeSpan ts = stopWatch.Elapsed;
 
             string elapsedTime = String.Format("{0:00}s {1:000}ms.", ts.Seconds, ts.Milliseconds);
-            Console.WriteLine("Quicksort mit {0} Zahlen => RunTime {1}", N, elapsedTime);
-
-            /* Vergleich mit Bubble Sort
-            int quickTime = ts.Seconds * 1000 + ts.Milliseconds;
-
-            stopWatch.Reset();
-            stopWatch.Start();
-
-            bool switched;
-            do
-            {
-                switched = false;
-                for (int i = 0; i < numbersOLD.Length - 1; i++)
-                    if (numbersOLD[i] > numbersOLD[i + 1])
-                    {
-                        int temp = numbersOLD[i];
-                        numbersOLD[i] = numbersOLD[i + 1];
-                        numbersOLD[i + 1] = temp;
-
-                        switched = true;
-                    }
-            } while (switched);
-
-            stopWatch.Stop();
-            ts = stopWatch.Elapsed;
-
-            elapsedTime = String.Format("{0:00}s {1:000}ms", ts.Seconds, ts.Milliseconds);
-            int bubbleTime = ts.Seconds * 1000 + ts.Milliseconds;
-            Console.WriteLine("Bubble Sort mit {0} Zahlen => RunTime {1}", N, elapsedTime);
-
-            Console.WriteLine("\nQuick Sort ist {0}-mal so schnell wie Bubble Sort!", Math.Round((double)bubbleTime/quickTime), 3);*/
+            Console.WriteLine("\nQuicksort mit {0} Zahlen => RunTime {1}", N, elapsedTime);
         }
     }
 }
