@@ -5,7 +5,7 @@ namespace BFW_Uebungen_Semester_1
 {
     class Aufgabe_D3c
     {
-        // Quicksort Algorithm (StackOverflow ab 1M+, 1M unter 10 Sekunden)
+        // Quicksort Algorithm (StackOverflow ab ~10M, 1M unter 5 Sekunden)
         private static void Quicksort(ref int[] _numbers, int startPosition, int lengthSubArray)
         {
 
@@ -39,7 +39,7 @@ namespace BFW_Uebungen_Semester_1
             Random rnd = new Random();
 
             for (int i = 0; i < numbers.Length; i++)
-                numbers[i] = rnd.Next(513);
+                numbers[i] = rnd.Next(1001);
 
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
