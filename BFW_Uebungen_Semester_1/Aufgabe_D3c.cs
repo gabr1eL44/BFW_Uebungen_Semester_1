@@ -31,7 +31,7 @@ namespace BFW_Uebungen_Semester_1
 
         public static void Start()
         {
-            Console.WriteLine("Geben Sie die Anzahl der zu sortierenden Zahlen ein (empfohlen 100k-800k): ");
+            Console.WriteLine("Geben Sie die Anzahl der zu sortierenden Zahlen ein (empfohlen 100k-850k): ");
             int N = Convert.ToInt32(Console.ReadLine());
 
             int[] numbers = new int[N];
