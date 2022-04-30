@@ -1,35 +1,30 @@
 ﻿using System;
 
-
 namespace BFW_Uebungen_Semester_1
 {
     class Aufgabe_D3c
     {
-        private static void Quicksort(ref int[] _numbers, int _startPosition, int _lengthArray)
+        private static void Quicksort(ref int[] _numbers, int startPosition, int lengthSubArray)
         {
-            int pivot = _numbers[_startPosition];
-            int[] _numbersNew = new int[_numbers.Length];
 
-            for (int i = 0; i < _numbers.Length; i++)
-                _numbersNew[i] = _numbers[i];
+            int[] newNumbers = new int[lengthSubArray];
+            int pivot = _numbers[startPosition];
 
-
-            int _countLeft = _startPosition; int _countRight = _startPosition + _lengthArray - 1;
-            for (int i = _startPosition; i < _startPosition + _lengthArray; i++)
-            {
+            int countLeft = 0, countRight = 0;
+            for (int i = startPosition; i < startPosition + lengthSubArray; i++)
                 if (_numbers[i] < pivot)
-                    _numbersNew[_countLeft++] = _numbers[i];
-                else
-                    _numbersNew[_countRight--] = _numbers[i];
-            }
+                    newNumbers[countLeft++] = _numbers[i];
+                else if (_numbers[i] > pivot)
+                    newNumbers[lengthSubArray - ++countRight] = _numbers[i];
+            newNumbers[countLeft] = pivot;
 
-            _numbers = _numbersNew;
-            int _splitPosition = _countRight + 1;
+            for (int i = 0; i < lengthSubArray; i++)
+                _numbers[startPosition + i] = newNumbers[i];
 
-            if (_splitPosition - _startPosition > 1)
-                 Quicksort(ref _numbers, _startPosition, _splitPosition - _startPosition);
-            if (_lengthArray - _splitPosition > 1)
-                 Quicksort(ref _numbers, _splitPosition, _lengthArray - _splitPosition);
+            if (countLeft > 0)
+                Quicksort(ref _numbers, startPosition, countLeft);
+            if (countRight > 0)
+                Quicksort(ref _numbers, countLeft + 1, countRight);  
         }
 
         public static void Start()
@@ -45,7 +40,8 @@ namespace BFW_Uebungen_Semester_1
             Quicksort(ref numbers, 0, numbers.Length);
 
             foreach (var element in numbers)
-                Console.WriteLine(element);
+                Console.Write(element + " ");
+            Console.WriteLine();
         }
     }
 }
