@@ -5,7 +5,7 @@ namespace BFW_Uebungen_Semester_1
 {
     class Aufgabe_D3c
     {
-        // Quicksort Algorithm (StackOverflow ab 850k, 100k unter 1 Sekunde, 850k unter 1 Minute)
+        // Quicksort Algorithm (StackOverflow ab 1M+, 1M unter 10 Sekunden)
         private static void Quicksort(ref int[] _numbers, int startPosition, int lengthSubArray)
         {
 
@@ -31,7 +31,7 @@ namespace BFW_Uebungen_Semester_1
 
         public static void Start()
         {
-            Console.WriteLine("Geben Sie die Anzahl der zu sortierenden Zahlen ein (empfohlen 100k-850k): ");
+            Console.WriteLine("Geben Sie die Anzahl der zu sortierenden Zahlen ein (empfohlen 100k-1M): ");
             int N = Convert.ToInt32(Console.ReadLine());
 
             int[] numbers = new int[N];
@@ -39,7 +39,7 @@ namespace BFW_Uebungen_Semester_1
             Random rnd = new Random();
 
             for (int i = 0; i < numbers.Length; i++)
-                numbers[i] = rnd.Next(101);
+                numbers[i] = rnd.Next(513);
 
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
