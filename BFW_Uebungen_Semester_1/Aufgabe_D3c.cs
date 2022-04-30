@@ -30,7 +30,7 @@ namespace BFW_Uebungen_Semester_1
 
         public static void Start()
         {
-            const int N = 500000;
+            const int N = 200000;
             int[] numbers = new int[N];
             int[] numbersOLD = new int[N];
 
