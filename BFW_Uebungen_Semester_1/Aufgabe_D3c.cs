@@ -14,7 +14,7 @@ namespace BFW_Uebungen_Semester_1
             for (int i = startPosition; i < startPosition + lengthSubArray; i++)
                 if (_numbers[i] < pivot)
                     newNumbers[countLeft++] = _numbers[i];
-                else if (_numbers[i] > pivot)
+                else if (i != startPosition)
                     newNumbers[lengthSubArray - ++countRight] = _numbers[i];
             newNumbers[countLeft] = pivot;
 
@@ -24,14 +24,14 @@ namespace BFW_Uebungen_Semester_1
             if (countLeft > 0)
                 Quicksort(ref _numbers, startPosition, countLeft);
             if (countRight > 0)
-                Quicksort(ref _numbers, countLeft + 1, countRight);  
+                Quicksort(ref _numbers, countLeft + 1, countRight);
         }
 
         public static void Start()
         {
             const int N = 8;
             int[] numbers = new int[N];
-
+            
             Random rnd = new Random();
 
             for (int i = 0; i < numbers.Length; i++)
