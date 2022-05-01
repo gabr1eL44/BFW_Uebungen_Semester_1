@@ -6,7 +6,7 @@ namespace BFW_Uebungen_Semester_1
 {
     class MultiThreadQuick
     {
-        private const int N = 10000000;
+        private const int N = 100000000;
         static readonly int[] numbers = new int[N1];
         static int threadCounter = 0;
 
@@ -63,9 +63,9 @@ namespace BFW_Uebungen_Semester_1
             Console.WriteLine("\nQuicksort mit {0} Zahlen => RunTime {1}\n", N1, elapsedTime);
 
             // Sample for control
-            for (int i = 0; i < N / 1000; i++)
+            /*for (int i = 0; i < N / 1000; i++)
                 Console.WriteLine("Zahlenwert an {0}. Stelle: {1}.", (i * 1000 + 500), numbers[i*1000 + 500]);
-            Console.WriteLine();
+            Console.WriteLine();*/
         }
     }
 }
