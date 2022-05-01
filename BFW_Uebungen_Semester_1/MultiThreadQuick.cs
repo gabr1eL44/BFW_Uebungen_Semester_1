@@ -6,7 +6,7 @@ namespace BFW_Uebungen_Semester_1
 {
     class MultiThreadQuick
     {
-        private const int N = 100000000;
+        private const int N = 10000000;
         static readonly int[] numbers = new int[N1];
         static int threadCounter = 0;
 
@@ -48,7 +48,7 @@ namespace BFW_Uebungen_Semester_1
         {
             Random rnd = new Random();
             for (int i = 0; i < numbers.Length; i++)
-                numbers[i] = rnd.Next(1001);
+                numbers[i] = rnd.Next(1000);
 
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
@@ -60,11 +60,12 @@ namespace BFW_Uebungen_Semester_1
             TimeSpan ts = stopWatch.Elapsed;
 
             string elapsedTime = String.Format("{0:00}m {1:00}s {2:000}ms.", ts.Minutes, ts.Seconds, ts.Milliseconds);
-            Console.WriteLine("\nQuicksort mit {0} Zahlen => RunTime {1}", N1, elapsedTime);
+            Console.WriteLine("\nQuicksort mit {0} Zahlen => RunTime {1}\n", N1, elapsedTime);
 
-            /*for (int i = 0; i < 1000; i++)
-                Console.Write(numbers[i] + " ");
-            Console.WriteLine();*/
+            // Stickprobe zur Kontrolle
+            for (int i = 0; i < N / 1000; i++)
+                Console.WriteLine("Zahlenwert an {0}. Stelle: {1}.", (i * 1000 + 500), numbers[i*1000 + 500]);
+            Console.WriteLine();
         }
     }
 }
