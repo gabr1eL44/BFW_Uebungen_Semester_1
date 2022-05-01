@@ -6,7 +6,7 @@ namespace BFW_Uebungen_Semester_1
 {
     class MultiThreadQuick
     {
-        private const int N = 100000000;
+        private const int N = 1000000000;
         static readonly int[] numbers = new int[N1];
         static int threadCounter = 0;
 
@@ -21,20 +21,22 @@ namespace BFW_Uebungen_Semester_1
             int startPosition = Convert.ToInt32(array[0]);
             int lengthSubArray = Convert.ToInt32(array[1]);
 
-            int[] newNumbers = new int[lengthSubArray];
-            int pivot = numbers[startPosition];
-
             int countLeft = 0, countRight = 0;
-            for (int i = startPosition; i < startPosition + lengthSubArray; i++)
-                if (numbers[i] < pivot)
-                    newNumbers[countLeft++] = numbers[i];
-                else if ((numbers[i] >= pivot) && (i != startPosition))
-                    newNumbers[lengthSubArray - ++countRight] = numbers[i];
+            {
+                int[] newNumbers = new int[lengthSubArray];
+                int pivot = numbers[startPosition];
 
-            newNumbers[countLeft] = pivot;
+                for (int i = startPosition; i < startPosition + lengthSubArray; i++)
+                    if (numbers[i] < pivot)
+                        newNumbers[countLeft++] = numbers[i];
+                    else if ((numbers[i] >= pivot) && (i != startPosition))
+                        newNumbers[lengthSubArray - ++countRight] = numbers[i];
 
-            for (int i = 0; i < lengthSubArray; i++)
-                numbers[startPosition + i] = newNumbers[i];
+                newNumbers[countLeft] = pivot;
+
+                for (int i = 0; i < lengthSubArray; i++)
+                    numbers[startPosition + i] = newNumbers[i];
+            }
 
             if (countLeft > 0)
                 ThreadPool.QueueUserWorkItem(Quicksort, new object[] { startPosition, countLeft });
