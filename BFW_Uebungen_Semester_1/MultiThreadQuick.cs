@@ -12,7 +12,7 @@ namespace BFW_Uebungen_Semester_1
 
         public static int N1 => N;
 
-        // Multithreaded Quicksort Algorithm (100M ~ 10 Sekunden)
+        // Multithreaded Quicksort Algorithm (100M ~ 10 seconds, 1B ~ 2:30 min)
         static void Quicksort(object state)
         {
             threadCounter++;
@@ -62,7 +62,7 @@ namespace BFW_Uebungen_Semester_1
             string elapsedTime = String.Format("{0:00}m {1:00}s {2:000}ms.", ts.Minutes, ts.Seconds, ts.Milliseconds);
             Console.WriteLine("\nQuicksort mit {0} Zahlen => RunTime {1}\n", N1, elapsedTime);
 
-            // Stickprobe zur Kontrolle
+            // Sample for control
             for (int i = 0; i < N / 1000; i++)
                 Console.WriteLine("Zahlenwert an {0}. Stelle: {1}.", (i * 1000 + 500), numbers[i*1000 + 500]);
             Console.WriteLine();
