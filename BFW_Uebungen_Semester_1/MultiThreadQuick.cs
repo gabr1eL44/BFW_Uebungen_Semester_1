@@ -6,7 +6,7 @@ namespace BFW_Uebungen_Semester_1
 {
     class MultiThreadQuick
     {
-        private const int N = 1000000000;
+        private const int N = 100000001;
         static readonly int[] numbers = new int[N1];
         static int threadCounter = 0;
 
@@ -49,25 +49,36 @@ namespace BFW_Uebungen_Semester_1
         public static void Start()
         {
             Random rnd = new Random();
+            Console.WriteLine("Erzeugen der Zufallszahlen");
+
             for (int i = 0; i < numbers.Length; i++)
-                numbers[i] = rnd.Next(1000);
+            {
+                numbers[i] = rnd.Next(1001);
+                if (i % 10000000 == 0)
+                    Console.Write(".");
+            }
 
             Stopwatch stopWatch = new Stopwatch();
+
+            Console.WriteLine("\n\nBeginne mit Sortierung");
             stopWatch.Start();
 
             ThreadPool.QueueUserWorkItem(Quicksort, new object[] { 0, numbers.Length });
             while (threadCounter > -2);
-           
+             
             stopWatch.Stop();
             TimeSpan ts = stopWatch.Elapsed;
+            Console.WriteLine("\nSortierung abgeschlossen");
 
             string elapsedTime = String.Format("{0:00}m {1:00}s {2:000}ms.", ts.Minutes, ts.Seconds, ts.Milliseconds);
-            Console.WriteLine("\nQuicksort mit {0} Zahlen => RunTime {1}\n", N1, elapsedTime);
+            Console.WriteLine("Quicksort mit {0} Zahlen => RunTime {1}", (N1 - 1), elapsedTime);
+            Console.ReadKey();
 
             // Sample for control
-            /*for (int i = 0; i < N / 1000; i++)
-                Console.WriteLine("Zahlenwert an {0}. Stelle: {1}.", (i * 1000 + 500), numbers[i*1000 + 500]);
-            Console.WriteLine();*/
+            Console.WriteLine("\nStichprobenartige Kontrolle");
+            Console.WriteLine("===========================");
+            for (int i = 0; i <= N; i+=1000000)
+                Console.WriteLine("Zahlenwert an {0}. Stelle: {1}.", i, numbers[i]);
         }
     }
 }
