@@ -6,48 +6,34 @@ namespace BFW_Uebungen_Semester_1
     {
         public static void Start()
         {
+            const int amountOfQuestions = 4;
             int rightAnswers = 0, wrongAnswers = 0;
 
-            // First question
-            Console.WriteLine("Frage 1/4: Der erfolgreichste Fußball-Torschütze Europas erhält von der UEFA als Auszeichnung ...?\n");
-            Console.WriteLine("(a) den Goldenen Schuh (b) das Gloldene Trikot (c) den Goldenen Ball (d) das Goldene Tor");
-            char choice = Console.ReadLine().Trim().ToLower()[0];
+            string[] question = new string[] { "Der erfolgreichste Fußball-Torschütze Europas erhält von der UEFA als Auszeichnung ...?",
+                                                "Wie wurde Berlin während der Berlin Blockade versorgt?",
+                                                "Was ist \"Fendant\"?",
+                                                "Wie heißt der weibliche Wal?" };
+            string[,] answer = new string[4, 4] { {"den Goldenen Schuh", "das Gloldene Trikot", "den Goldenen Ball", "das Goldene Tor"},
+                                                   {"durch Überläufer", "durch Spione", "durch einen Tunnel", "durche eine Luftbrücke"},
+                                                   {"Weißwein", "Süßspeise", "Fischsuppe", "Gewürzsauce"},
+                                                   {"Walkuh", "Walfrau", "Walin", "Brigitte" } };
+            char[] solution = new char[] { 'a', 'd', 'a', 'a' };
 
-            if (choice == 'a')
-                rightAnswers++;
-            else
-                wrongAnswers++;
+            for (int i = 0; i < amountOfQuestions; i++)
+            {
+                if (i != 0) Console.WriteLine();
 
-            // Second question
-            Console.WriteLine("\nFrage 2/4: Wie wurde Berlin während der Berlin Blockade versorgt?\n");
-            Console.WriteLine("(a) durch Überläufer (b) durch Spione (c) durch einen Tunnel (d) durch eine Luftbrücke");
-            choice = Console.ReadLine().Trim().ToLower()[0];
+                Console.WriteLine("Frage {0}/{1}: {2}\n", (i + 1), amountOfQuestions, question[i]);
+                Console.WriteLine("(a) {0} (b) {1} (c) {2} (d) {3}", answer[i, 0], answer[i, 1], answer[i, 2], answer[i, 3]);
 
-            if (choice == 'd')
-                rightAnswers++;
-            else
-                wrongAnswers++;
+                char choice = Console.ReadLine().Trim().ToLower()[0];
 
-            // Third question
-            Console.WriteLine("\nFrage 3/4: Was ist \"Fendant\"?\n");
-            Console.WriteLine("(a) Weißwein (b) Süßspeise (c) Fischsuppe (d) Gewürzsauce");
-            choice = Console.ReadLine().Trim().ToLower()[0];
-
-            if (choice == 'a')
-                rightAnswers++;
-            else
-                wrongAnswers++;
-
-            // Fourth question
-            Console.WriteLine("\nFrage 4/4: Wie heißt der weibliche Wal?\n");
-            Console.WriteLine("(a) Walkuh (b) Walfrau (c) Walin (d) Brigitte");
-            choice = Console.ReadLine().Trim().ToLower()[0];
-
-            if (choice == 'a')
-                rightAnswers++;
-            else
-                wrongAnswers++;
-
+                if (choice == solution[i])
+                    rightAnswers++;
+                else
+                    wrongAnswers++;
+            }
+            
             Console.Clear();
             Console.WriteLine("Sie hatten {0} richtige und {1} falsche Antworten.", rightAnswers, wrongAnswers);
         }
