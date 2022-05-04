@@ -13,10 +13,10 @@ namespace BFW_Uebungen_Semester_1
                                                 "Wie wurde Berlin während der Berlin Blockade versorgt?",
                                                 "Was ist \"Fendant\"?",
                                                 "Wie heißt der weibliche Wal?" };
-            string[,] answer = new string[4, 4] { {"den Goldenen Schuh", "das Gloldene Trikot", "den Goldenen Ball", "das Goldene Tor"},
-                                                   {"durch Überläufer", "durch Spione", "durch einen Tunnel", "durche eine Luftbrücke"},
-                                                   {"Weißwein", "Süßspeise", "Fischsuppe", "Gewürzsauce"},
-                                                   {"Walkuh", "Walfrau", "Walin", "Brigitte" } };
+            string[,] answer = new string[4, 4] { { "den Goldenen Schuh", "das Gloldene Trikot", "den Goldenen Ball", "das Goldene Tor" },
+                                                   { "durch Überläufer", "durch Spione", "durch einen Tunnel", "durche eine Luftbrücke" },
+                                                   { "Weißwein", "Süßspeise", "Fischsuppe", "Gewürzsauce" },
+                                                   { "Walkuh", "Walfrau", "Walin", "Brigitte" } };
             char[] solution = new char[] { 'a', 'd', 'a', 'a' };
 
             for (int i = 0; i < amountOfQuestions; i++)
