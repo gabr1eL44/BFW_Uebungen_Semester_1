@@ -13,7 +13,7 @@ namespace BFW_Uebungen_Semester_1
         public static int N1 => N;
 
         // Multithreaded Quicksort Algorithm (100M ~ 10 seconds, 1B ~ 2:30 min)
-        static void Quicksort(object state)
+        private static void Quicksort(object state)
         {
             threadCounter++;
 
