@@ -13,7 +13,7 @@ namespace BFW_Uebungen_Semester_1
             int i = 0;
             string res = "";
 
-            // String comprimieren
+            // String komprimieren
             foreach (var element in input)
                 if (c != element)
                 {
