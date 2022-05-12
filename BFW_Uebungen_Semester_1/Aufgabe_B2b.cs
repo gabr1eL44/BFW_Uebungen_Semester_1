@@ -13,6 +13,7 @@ namespace BFW_Uebungen_Semester_1
             int i = 0;
             string res = "";
 
+            // String comprimieren
             foreach (var element in input)
                 if (c != element)
                 {
@@ -29,6 +30,7 @@ namespace BFW_Uebungen_Semester_1
 
             string temp = ""; bool count = false, escape = false; int anzahl = 0;
 
+            // String wieder entkomprimieren, bool escape dient dem Überspringen von '%' und '\'
             foreach (var element in res)
             {
                 if ((element == '%') && (escape == false))
@@ -38,7 +40,7 @@ namespace BFW_Uebungen_Semester_1
                         anzahl = Convert.ToInt32(temp);
                         temp = "";
                     }
-                    count = count ? false : true;
+                    count = !count;
                 }
                 else
                 {
