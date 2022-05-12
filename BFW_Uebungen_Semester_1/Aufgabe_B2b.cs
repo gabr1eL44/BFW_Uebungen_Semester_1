@@ -7,7 +7,7 @@ namespace BFW_Uebungen_Semester_1
         public static void Start()
         {
             Console.WriteLine("Bitte geben Sie eine Zeichenfolge ein: ");
-            string input = Console.ReadLine() + " ";
+            string input = Console.ReadLine() + ' ';
 
             char c = input[0];
             int i = 0;
