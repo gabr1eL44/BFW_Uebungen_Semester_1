@@ -22,6 +22,7 @@ namespace BFW_Uebungen_Semester_1
 
             int jahre = (int)(einkPreis / (vermPreis * 12));
             int monate = (int)((einkPreis / (vermPreis * 12)) % 12);
+
             Console.WriteLine("\nSie werden die Gewinnschwelle nach {0} Jahren und {1} Monaten erreicht haben!", jahre, monate);
         }
     }
