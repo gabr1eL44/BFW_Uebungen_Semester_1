@@ -4,6 +4,20 @@ namespace BFW_Uebungen_Semester_1
 {
     class Aufgabe_X3
     {
+        private static bool PrimeCheck(int _counter)
+        {
+            bool _isPrime = true;
+            for (int i = 2; i < _counter; i++)
+            {
+                if (_counter % i == 0)
+                {
+                    _isPrime = false;
+                    break;
+                }
+            }
+            return _isPrime;
+        }
+
         public static void Start()
         {
             Console.WriteLine("Wie viele Mirpzahlen möchsten Sie erzeugen?");
@@ -16,15 +30,7 @@ namespace BFW_Uebungen_Semester_1
             {
                 counter++;
 
-                bool isPrime = true;
-                for (int i = 2; i < counter; i++)
-                {
-                    if (counter % i == 0)
-                    {
-                        isPrime = false;
-                        break;
-                    }
-                }
+                bool isPrime = PrimeCheck(counter);
                 if (!isPrime)
                     continue;
 
@@ -33,20 +39,9 @@ namespace BFW_Uebungen_Semester_1
                     newStr += str[i];
 
                 int reversedCounter = Convert.ToInt32(newStr);
+                bool isReversedPrime = PrimeCheck(reversedCounter);
 
-                bool isReversedPrime = true;
-                for (int i=2; i < reversedCounter; i++)
-                {
-                    if (reversedCounter % i == 0)
-                    {
-                        isReversedPrime = false;
-                        break;
-                    }
-                    if (isReversedPrime == false)
-                        break;
-                }
-
-                if (isPrime && isReversedPrime)
+                if ((isPrime && isReversedPrime) && (counter != reversedCounter))
                 {
                     hits++;
                     Console.WriteLine("{0}: {1} ist eine Mirpzahl!", hits, counter);
