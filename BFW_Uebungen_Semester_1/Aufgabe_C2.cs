@@ -29,6 +29,10 @@ namespace BFW_Uebungen_Semester_1
                     maximum = j;
             }
             Console.WriteLine("\nSie können maximal {0} Kekse backen", maximum * 5);
+
+            Console.WriteLine("\nDafür benötigen Sie die folgenden Mengen an Mehl, Butter, Eiern, Zucker, Vanilin und Salz..");
+            for (int i = 0; i < 6; i++)
+                Console.WriteLine(maximum * mengen[i]);
         }
     }
 }
