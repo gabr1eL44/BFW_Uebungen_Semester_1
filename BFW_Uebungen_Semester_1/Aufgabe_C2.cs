@@ -21,15 +21,14 @@ namespace BFW_Uebungen_Semester_1
             Console.Write("Bitte geben Sie die Anzahl an Prisen Salz ein:                 ");
             zutaten[5] = Convert.ToInt32(Console.ReadLine());
 
-           int minimum = zutaten[0] / mengen[0];
+           int maximum = zutaten[0] / mengen[0];
             for (int i = 1; i < 6; i++)
             {
                 int j = zutaten[i] / mengen[i];
-                if (j < minimum)
-                    minimum = j;
+                if (j < maximum)
+                    maximum = j;
             }
-
-            Console.WriteLine("\nSie können maximal {0} Kekse backen", minimum * 5);
+            Console.WriteLine("\nSie können maximal {0} Kekse backen", maximum * 5);
         }
     }
 }
