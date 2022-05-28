@@ -31,8 +31,8 @@ namespace BFW_Uebungen_Semester_1
             Console.WriteLine("=================");
             Console.WriteLine("Schiffe versenken");
             Console.WriteLine("=================\n");
-            int versuche = 0, treffer = 0;
 
+            int versuche = 0, treffer = 0;
             // Start des Spiels
             do
             {
