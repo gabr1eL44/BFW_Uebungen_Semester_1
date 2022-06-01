@@ -39,7 +39,9 @@ namespace BFW_Uebungen_Semester_1
                 int input;
                 do
                 {
-                    Console.WriteLine("Bitte geben Sie Ihre Eingabe ein (1-20):");
+                    foreach (var element in felder)
+                        Console.Write(element);
+                    Console.WriteLine("\nBitte geben Sie Ihre Eingabe ein (1-20):");
                     input = Convert.ToInt32(Console.ReadLine()) - 1;
                 } while ((input < 0) || (input > 19));
 
