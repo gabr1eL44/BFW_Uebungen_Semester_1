@@ -7,64 +7,65 @@ namespace BFW_Uebungen_Semester_1
         public static void Start()
         {
             // Initialisierung des Spielfeldes
-            int[] felder = new int[20];
+            char[] spielfeld = new char[20];
             for (int i = 0; i < 20; i++)
-                felder[i] = 0;
+                spielfeld[i] = '0';
 
             var rand = new Random();
             int segelboot, schnellboot, fregatte;
 
             fregatte = rand.Next(0, 18);
             for (int i = fregatte; i < (fregatte + 3); i++)
-                felder[i] = 1;
-
+                spielfeld[i] = '1';
+            
             do
                 schnellboot = rand.Next(0, 19);
-            while ((felder[schnellboot] != 0) || (felder[schnellboot + 1] != 0));
-            felder[schnellboot] = 1; felder[schnellboot + 1] = 1;
+            while ((spielfeld[schnellboot] != '0') || (spielfeld[schnellboot + 1] != '0'));
+            spielfeld[schnellboot] = '1'; spielfeld[schnellboot + 1] = '1';
 
             do
                 segelboot = rand.Next(0, 20);
-            while (felder[segelboot] != 0);
-            felder[segelboot] = 1;
+            while (spielfeld[segelboot] != '0');
+            spielfeld[segelboot] = '1';
 
             Console.WriteLine("=================");
             Console.WriteLine("Schiffe versenken");
             Console.WriteLine("=================\n");
 
             int versuche = 0, treffer = 0;
+
             // Start des Spiels
-            string[] spielfeld = new string[20];
-            for (int i = 0; i < 20; i++)
-                spielfeld[i] = "O";
             do
             {
                 int input;
                 do
                 {
                     foreach (var element in spielfeld)
-                        Console.Write(element);
+                        if ((element != '0') && (element != '1'))
+                            Console.Write(element);
+                        else
+                            Console.Write("O");
                     Console.WriteLine("\nBitte geben Sie Ihre Eingabe ein (1-20):");
                     input = Convert.ToInt32(Console.ReadLine()) - 1;
                 } while ((input < 0) || (input > 19));
 
                 versuche++;
 
-                if (felder[input] == 1)
+                if (spielfeld[input] == '1')
                 {
                     treffer++;
-                    felder[input] = 0;
-                    spielfeld[input] = "X";
+                    spielfeld[input] = '0';
+                    spielfeld[input] = 'X';
 
                     if (input == segelboot)
                         Console.WriteLine("Treffer! Sie haben das Segelboot versenkt!\n");
                     else if ((input == schnellboot) || (input == schnellboot + 1))
-                        if ((felder[schnellboot] == 0) && (felder[schnellboot + 1] == 0))
+                        if ((spielfeld[schnellboot] == '0') && (spielfeld[schnellboot + 1] == '0'))
                             Console.WriteLine("Treffer! Sie haben das Schnellboot versenkt!\n");
                         else
                             Console.WriteLine("Treffer! Sie haben das Schnellboot getroffen!\n");
                     else
-                        if ((felder[fregatte] == 0) && (felder[fregatte + 1] == 0) && (felder[fregatte + 2] == 0))
+                        if ((spielfeld[fregatte] == '0') && (spielfeld[fregatte + 1] == '0') && (spielfeld[fregatte + 2] == '0'))
                         Console.WriteLine("Treffer! Sie haben die Fregtte versenkt!\n");
                     else
                         Console.WriteLine("Treffer! Sie haben die Fregatte getroffen!\n");
@@ -72,13 +73,16 @@ namespace BFW_Uebungen_Semester_1
                 else
                 {
                     Console.WriteLine("Leider nicht getroffen. Das war ihr {0}. Versuch.\n", versuche);
-                    spielfeld[input] = "-";
+                    spielfeld[input] = '-';
                 }
 
             } while (treffer < 6);
 
             foreach (var element in spielfeld)
-                Console.Write(element);
+                if ((element != '0') && (element != '1'))
+                    Console.Write(element);
+                else
+                    Console.Write("O");
             Console.WriteLine("\nGlückwunsch! Sie haben alle Schiffe versenkt. Dafür benötigten Sie {0} Versuche", versuche);
         }
     }
