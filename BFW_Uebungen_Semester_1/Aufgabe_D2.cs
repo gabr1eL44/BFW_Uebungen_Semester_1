@@ -34,12 +34,15 @@ namespace BFW_Uebungen_Semester_1
 
             int versuche = 0, treffer = 0;
             // Start des Spiels
+            string[] spielfeld = new string[20];
+            for (int i = 0; i < 20; i++)
+                spielfeld[i] = "O";
             do
             {
                 int input;
                 do
                 {
-                    foreach (var element in felder)
+                    foreach (var element in spielfeld)
                         Console.Write(element);
                     Console.WriteLine("\nBitte geben Sie Ihre Eingabe ein (1-20):");
                     input = Convert.ToInt32(Console.ReadLine()) - 1;
@@ -51,6 +54,7 @@ namespace BFW_Uebungen_Semester_1
                 {
                     treffer++;
                     felder[input] = 0;
+                    spielfeld[input] = "X";
 
                     if (input == segelboot)
                         Console.WriteLine("Treffer! Sie haben das Segelboot versenkt!\n");
@@ -66,7 +70,10 @@ namespace BFW_Uebungen_Semester_1
                         Console.WriteLine("Treffer! Sie haben die Fregatte getroffen!\n");
                 }
                 else
+                {
                     Console.WriteLine("Leider nicht getroffen. Das war ihr {0}. Versuch.\n", versuche);
+                    spielfeld[input] = "-";
+                }
 
             } while (treffer < 6);
 
