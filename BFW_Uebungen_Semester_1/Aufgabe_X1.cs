@@ -71,18 +71,24 @@ namespace BFW_Uebungen_Semester_1
                         if (counter >= 2)
                         {
                             Console.WriteLine("Bitte geben Sie den ersten Index ein (0-{0}):", counter - 1);
-                            Int32.TryParse(Console.ReadLine(), out int firstIndex);
-                            Console.WriteLine("Bitte geben Sie den zweiten Index ein (0-{0}):", counter - 1);
-                            Int32.TryParse(Console.ReadLine(), out int secondIndex);
-                            if (((firstIndex > -1) && (firstIndex < counter)) && ((secondIndex > -1) && (secondIndex < counter)))
+                            if ((Int32.TryParse(Console.ReadLine(), out int firstIndex) && (firstIndex > -1) && (firstIndex < counter))) 
                             {
-                                string temp = memories[firstIndex];
-                                memories[firstIndex] = memories[secondIndex];
-                                memories[secondIndex] = temp;
+                                Console.WriteLine("Bitte geben Sie den zweiten Index ein (0-{0}):", counter - 1);
+                                if ((Int32.TryParse(Console.ReadLine(), out int secondIndex) && (secondIndex > -1) && (secondIndex < counter))) 
+                                {
+                                    string temp = memories[firstIndex];
+                                    memories[firstIndex] = memories[secondIndex];
+                                    memories[secondIndex] = temp;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Fehlerhafte Eingabe!");
+                                    Console.ReadKey();
+                                }
                             }
                             else
                             {
-                                Console.WriteLine("\nFehlerhafte Eingabe!");
+                                Console.WriteLine("Fehlerhafte Eingabe!");
                                 Console.ReadKey();
                             }
                         }
@@ -97,9 +103,8 @@ namespace BFW_Uebungen_Semester_1
                         if (counter != 0)
                         {
                             Console.WriteLine("\nWelche Erinnerung möchten Sie löschen (0-{0})?", counter - 1);
-                            int index = Convert.ToInt32(Console.ReadLine());
 
-                            if ((index > -1) && (index < counter))
+                            if ((Int32.TryParse(Console.ReadLine(), out int index)) && (index > -1) && (index < counter))
                             {
                                 string[] tempArr2 = new string[delMemories.Length + 1];
                                 for (int i = 0; i < delCounter; i++)
@@ -121,7 +126,7 @@ namespace BFW_Uebungen_Semester_1
                             }
                             else
                             {
-                                Console.WriteLine("\nFehlerhafte Eingabe!");
+                                Console.WriteLine("Fehlerhafte Eingabe!");
                                 Console.ReadKey();
                             }
                         }
