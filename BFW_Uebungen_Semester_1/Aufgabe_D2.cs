@@ -77,7 +77,9 @@ namespace BFW_Uebungen_Semester_1
 
             } while (treffer < 6);
 
-            Console.WriteLine("Glückwunsch! Sie haben alle Schiffe versenkt. Dafür benötigten Sie {0} Versuche", versuche);
+            foreach (var element in spielfeld)
+                Console.Write(element);
+            Console.WriteLine("\nGlückwunsch! Sie haben alle Schiffe versenkt. Dafür benötigten Sie {0} Versuche", versuche);
         }
     }
 }
