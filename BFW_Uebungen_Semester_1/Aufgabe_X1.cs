@@ -74,10 +74,17 @@ namespace BFW_Uebungen_Semester_1
                             Int32.TryParse(Console.ReadLine(), out int firstIndex);
                             Console.WriteLine("Bitte geben Sie den zweiten Index ein (0-{0}):", counter - 1);
                             Int32.TryParse(Console.ReadLine(), out int secondIndex);
-     
-                            string temp = memories[firstIndex];
-                            memories[firstIndex] = memories[secondIndex];
-                            memories[secondIndex] = temp;
+                            if (((firstIndex > -1) && (firstIndex < counter)) && ((secondIndex > -1) && (secondIndex < counter)))
+                            {
+                                string temp = memories[firstIndex];
+                                memories[firstIndex] = memories[secondIndex];
+                                memories[secondIndex] = temp;
+                            }
+                            else
+                            {
+                                Console.WriteLine("\nFehlerhafte Eingabe!");
+                                Console.ReadKey();
+                            }
                         }
                         else
                         {
@@ -90,25 +97,33 @@ namespace BFW_Uebungen_Semester_1
                         if (counter != 0)
                         {
                             Console.WriteLine("\nWelche Erinnerung möchten Sie löschen (0-{0})?", counter - 1);
-                            int choice = Convert.ToInt32(Console.ReadLine());
+                            int index = Convert.ToInt32(Console.ReadLine());
 
-                            string[] tempArr2 = new string[delMemories.Length + 1];
-                            for (int i = 0; i < delCounter; i++)
-                                tempArr2[i] = delMemories[i];
-                            tempArr2[tempArr2.Length - 1] = memories[choice];
-                            delMemories = tempArr2;
-
-                            int skipped = 0;
-                            string[] tempArr3 = new string[memories.Length - 1];
-                            for (int i = 0; i < counter - 1; i++)
+                            if ((index > -1) && (index < counter))
                             {
-                                if (choice == i)
-                                    skipped = 1;
-                                tempArr3[i] = memories[i + skipped];
-                            }
-                            memories = tempArr3;
+                                string[] tempArr2 = new string[delMemories.Length + 1];
+                                for (int i = 0; i < delCounter; i++)
+                                    tempArr2[i] = delMemories[i];
+                                tempArr2[tempArr2.Length - 1] = memories[index];
+                                delMemories = tempArr2;
 
-                            counter--; delCounter++;
+                                int skipped = 0;
+                                string[] tempArr3 = new string[memories.Length - 1];
+                                for (int i = 0; i < counter - 1; i++)
+                                {
+                                    if (index == i)
+                                        skipped = 1;
+                                    tempArr3[i] = memories[i + skipped];
+                                }
+                                memories = tempArr3;
+
+                                counter--; delCounter++;
+                            }
+                            else
+                            {
+                                Console.WriteLine("\nFehlerhafte Eingabe!");
+                                Console.ReadKey();
+                            }
                         }
                         else
                         {
