@@ -15,7 +15,7 @@ namespace BFW_Uebungen_Semester_1
                 zutatenMenge[i] = Convert.ToInt32(Console.ReadLine());
             }
 
-           int maximum = zutatenMenge[0] / mengen[0];
+            int maximum = zutatenMenge[0] / mengen[0];
             for (int i = 1; i < 6; i++)
             {
                 int j = zutatenMenge[i] / mengen[i];
