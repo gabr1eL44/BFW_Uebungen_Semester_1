@@ -83,7 +83,7 @@ namespace BFW_Uebungen_Semester_1
                     Console.Write(element);
                 else
                     Console.Write("O");
-            Console.WriteLine("\nGlückwunsch! Sie haben alle Schiffe versenkt. Dafür benötigten Sie {0} Versuche", versuche);
+            Console.WriteLine("\nGlückwunsch! Sie haben alle Schiffe versenkt. Dafür benötigten Sie {0} Versuche.", versuche);
         }
     }
 }
