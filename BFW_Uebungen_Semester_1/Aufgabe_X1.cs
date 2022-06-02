@@ -11,7 +11,7 @@ namespace BFW_Uebungen_Semester_1
             
             int counter = 0, delCounter = 0;
 
-            string input;
+            string select;
             while (true)
             {
                 Console.WriteLine("===========");
@@ -25,8 +25,8 @@ namespace BFW_Uebungen_Semester_1
                 Console.WriteLine("(5) Löschen einer Erinnerungen");
                 Console.WriteLine("(x) Programm beenden");
 
-                input = Console.ReadLine();
-                switch (input)
+                select = Console.ReadLine();
+                switch (select)
                 {
                     case "1":
                         Console.Clear();
