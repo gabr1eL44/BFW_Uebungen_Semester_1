@@ -10,7 +10,7 @@ namespace BFW_Uebungen_Semester_1
             string[] delMemories = new string[0];
             
             int counter = 0, delCounter = 0;
-
+            
             string select;
             while (true)
             {
@@ -57,7 +57,7 @@ namespace BFW_Uebungen_Semester_1
                         Console.Clear();
                         if (delCounter != 0)
                         {
-                            Console.WriteLine("Ihre gelöschten Erinnerung:");
+                            Console.WriteLine("Ihre gelöschten Erinnerungen:");
 
                             for (int i = 0; i < delCounter; i++)
                                 Console.WriteLine("{0}: {1}", i, delMemories[i]);
