@@ -29,15 +29,9 @@ namespace BFW_Uebungen_Semester_1
                     Console.ReadKey();
                     Console.Clear();
 
-                    durchlauf++; temp = zahl;
-                    if (durchlauf == 4)
-                        break;
-                    else if (durchlauf == 3)
-                    {
-                        Console.WriteLine("Neue Zahl:");
-                        temp = Convert.ToDouble(Console.ReadLine());
-                    }
-                    if (durchlauf >= 2)
+                    durchlauf++;
+ 
+                    if (durchlauf == 2)
                     {
                         Console.WriteLine("Neuer Mulitplikator:");
                         do
@@ -48,7 +42,16 @@ namespace BFW_Uebungen_Semester_1
                         do
                             divisor = Convert.ToDouble(Console.ReadLine());
                         while (divisor < multiplier);
+
+                        temp = zahl;
                     }
+                    else if (durchlauf == 3)
+                    {
+                        Console.WriteLine("Neue Zahl:");
+                        temp = Convert.ToDouble(Console.ReadLine());
+                    }
+                    else if (durchlauf == 4)
+                        break;
                 } while (durchlauf < 4);
 
                 Console.WriteLine("Möchten Sie das Program beenden (j/n)?");
