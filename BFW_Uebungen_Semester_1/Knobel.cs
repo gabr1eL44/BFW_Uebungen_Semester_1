@@ -11,19 +11,20 @@ namespace BFW_Uebungen_Semester_1
             Console.WriteLine();
 
             // Lösung 2
-            Console.WriteLine('E' % 'A');
+            Console.WriteLine('F' % 'A');
             Console.WriteLine();
 
-            //Lösung 3
+            // Lösung 3
             Console.WriteLine("ooooo");
             Console.WriteLine("o");
             Console.WriteLine("ooooo");
             Console.WriteLine("    o");
             Console.WriteLine("ooooo");
 
+            // Lösung 4
             int i = Convert.ToByte(true);
             Console.WriteLine();
-            Console.WriteLine((i<<i<<i)|i);
+            Console.WriteLine(i<<i<<i|i);
         }
     }
 }
