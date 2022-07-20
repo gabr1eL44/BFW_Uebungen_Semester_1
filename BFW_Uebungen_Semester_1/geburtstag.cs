@@ -2,7 +2,7 @@
 
 namespace BFW_Uebungen_Semester_1
 {
-    class geburtstag
+    class Geburtstag
     {
         public static void Start()
         {
