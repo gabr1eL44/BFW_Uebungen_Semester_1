@@ -7,7 +7,7 @@ namespace BFW_Uebungen_Semester_1
         static void Main()
         {
             // Start Current Task
-            Geburtstag.Start();
+            Aufgabe_X1.Start();
 
             // Wait for KeyPress
             Console.WriteLine("\nDrücken Sie eine beliebige Taste, um dieses Fenster zu schließen.");
@@ -15,3 +15,4 @@ namespace BFW_Uebungen_Semester_1
         }
     }
 }
+
