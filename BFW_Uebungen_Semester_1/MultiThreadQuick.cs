@@ -6,7 +6,7 @@ namespace BFW_Uebungen_Semester_1
 {
     class MultiThreadQuick
     {
-        private const int N = 100000001;
+        private const int N = 1001;
         static readonly int[] numbers = new int[N1];
         static int threadCounter = 0;
 
